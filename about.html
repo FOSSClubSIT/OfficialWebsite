@@ -11,26 +11,29 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-<header class="header">
-  <nav class="navbar">
-    <a href="./index.html" class="logo">
-      <img src="./assets/logo.png" alt="FOSS Logo">
-      <span>FOSS</span>
-    </a>
-    <div class="hamburger">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-    </div>
-    <ul class="nav-links">
-      <li><a href="./index.html">Home</a></li>
-      <li><a href="./about.html" class="active">About</a></li>
-      <li><a href="./events.html">Events</a></li>
-      <li><a href="./team.html">Team</a></li>
-      <li><a href="./contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+  <header class="header">
+    <nav class="navbar">
+      <a href="./index.html" class="logo">
+        <img src="./assets/Images/logo.svg" alt="FOSS Logo">
+        <span>FOSS</span>
+      </a>
+  
+      <button id="open-menu"  onclick="opensidebar()"><img src="assets/Images/menu_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" height="50px" width="50px" alt=""></button>
+  
+      <ul class="nav-links">
+        <li><button id="close-menu" onclick="closesidebar()"><img src="assets/Images/close_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" height="50px" width="50px" alt=""></button></li>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./about.html" class="active">About</a></li>
+        <li><a href="./projects.html">Projects</a></li>
+        <li><a href="./events.html">Events</a></li>
+        <li><a href="./team.html">Team</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <div id="overlay" onclick="closesidebar()" aria-hidden="true"></div>
+  
 
 <section class="page-banner parallax">
   <div class="page-banner-content fade-in-up">
