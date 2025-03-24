@@ -1765,28 +1765,59 @@ body {
 .mission-section {
     padding: 4rem 2rem;
     background: linear-gradient(145deg, #111, #1a1a1a);
+    text-align: center; /* Centers all text inside the section */
+}
+
+.mission-heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--accent-green);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.mission-heading::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--accent-green);
+    margin: 0.5rem auto 1rem;
+    border-radius: 2px;
 }
 
 .mission-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .mission-text {
-    font-size: 1.1rem;
-    line-height: 1.6;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #ddd;
+    max-width: 800px;
 }
 
 .mission-stats {
     display: flex;
+    justify-content: center;
     gap: 2rem;
     margin-top: 2rem;
 }
 
 .mission-stats .stat {
     text-align: center;
+    padding: 1rem;
+    background: rgba(0, 204, 102, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.mission-stats .stat:hover {
+    transform: scale(1.1);
 }
 
 .mission-stats .stat i {
@@ -1796,51 +1827,234 @@ body {
 }
 
 .mission-stats .stat span {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: bold;
     color: var(--light-green);
 }
 
 .mission-image img {
     width: 100%;
+    max-width: 500px;
     border-radius: 15px;
     box-shadow: 0 10px 20px rgba(0, 204, 102, 0.2);
+    margin-top: 2rem;
+}
+
+/* Ensure Section is Visible */
+.values-section {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+/* Title Styling */
+.section-title {
+    font-size: 2rem;
+    color: #00ff99;
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+}
+
+/* Grid Layout */
+.values-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: stretch;
+}
+
+/* Value Card */
+.value-card {
+    background: #111;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid #00ff99;
+    text-align: center;
+    width: 250px;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.4s ease-in-out; /* Smooth effect */
+}
+
+/* Ensure text stays centered */
+.value-card p {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.6;
+}
+
+/* Smoother Glow & Scale Effect */
+.value-card:hover {
+    transform: scale(1.07);
+    box-shadow: 0 8px 30px rgba(0, 255, 150, 0.5);
+}
+
+/* Pulsating Glow Animation */
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 10px rgba(0, 255, 150, 0.4); }
+    50% { box-shadow: 0 0 20px rgba(0, 255, 150, 0.6); }
+    100% { box-shadow: 0 0 10px rgba(0, 255, 150, 0.4); }
+}
+
+/* Optional: Add pulse animation on hover */
+.value-card:hover {
+    animation: pulseGlow 1.5s infinite alternate ease-in-out;
+}
+
+/* Icon Styling */
+.value-card i {
+    font-size: 2rem;
+    color: #00ff99;
+    margin-bottom: 10px;
+    transition: transform 0.4s ease, color 0.4s ease;
+}
+
+.value-card:hover i {
+    transform: scale(1.2);
+    color: #00ffaa;
+}
+
+/* Heading & Paragraph */
+.value-card h3 {
+    margin-bottom: 10px; /* Ensures equal spacing for all headings */
+  }
+  
+.value-card p {
+  max-width: 90%; /* Ensures better text distribution */
+  margin: 0 auto; /* Centers text */
+}
+.section-title {
+    text-align: center;
+    width: 100%;
+    display: block;
+    margin-bottom: 2rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .timeline {
     position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem 0;
+    max-width: 900px;
+    margin: auto;
+    padding: 20px 0;
 }
 
+/* Vertical Timeline Line */
 .timeline::before {
-    content: '';
+    content: "";
     position: absolute;
+    top: 0;
     left: 50%;
-    width: 2px;
+    width: 4px;
     height: 100%;
     background: var(--primary-green);
     transform: translateX(-50%);
 }
 
+/* Ensure the line stops at the last item */
+.timeline-item:last-child::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 4px;
+    height: 0; /* Prevents extra line extension */
+    background: transparent;
+    transform: translateX(-50%);
+}
+
+/* Timeline Item Alignment */
 .timeline-item {
-    padding: 2rem 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 30px; /* Reduced gap between items */
     position: relative;
-    width: 50%;
-    transform: translateX(-100%);
 }
 
+/* Alternate left-right positioning */
 .timeline-item:nth-child(even) {
-    transform: translateX(100%);
-    margin-left: 50%;
+    justify-content: flex-end;
 }
 
+/* Timeline Card Styling */
 .timeline-content {
     background: linear-gradient(145deg, #111, #1a1a1a);
-    padding: 1.5rem;
+    padding: 1.2rem; /* Slightly reduced padding */
     border-radius: 15px;
     border: 1px solid var(--dark-green);
+    width: 42%; /* Adjusted width */
+    word-wrap: break-word;
+    line-height: 1.5; /* Reduced line height */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+/* Hover Effect */
+.timeline-content:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 255, 150, 0.6);
+}
+
+/* Timeline Year */
+.timeline-year {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--primary-green);
+    margin-bottom: 6px; /* Reduced space */
+}
+
+/* Timeline Title */
+.timeline-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+/* Circle Indicator */
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px; /* Smaller circle */
+    height: 16px;
+    background: var(--primary-green);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Responsive Fix */
+@media screen and (max-width: 768px) {
+    .timeline-item {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px; /* Reduced space for mobile */
+    }
+
+    .timeline-item:nth-child(even) {
+        justify-content: center;
+    }
+
+    .timeline-content {
+        width: 85%; /* Wider on smaller screens */
+        text-align: center;
+    }
+
+    .timeline-item::before {
+        left: 50%;
+    }
 }
 
 .tech-cloud {
@@ -1947,5 +2161,6 @@ body {
         margin-left: 2rem;
     }
 }
-
-
+.about-title::after {
+    width: 14%; /* Adjust underline width only for About page */
+}
