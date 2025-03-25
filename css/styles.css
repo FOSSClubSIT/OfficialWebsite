@@ -2187,3 +2187,74 @@ body {
 .about-title::after {
     width: 14%; /* Adjust underline width only for About page */
 }
+@media screen and (max-width: 768px) {
+    /* Adjust the padding for sections */
+    .mission-section, .values-section {
+        padding: 2rem 1rem;
+    }
+
+    /* Make headings more readable on mobile */
+    .mission-heading, .section-title {
+        font-size: 2rem;
+    }
+
+    /* Stack mission stats vertically */
+    .mission-stats {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    /* Ensure images fit properly */
+    .mission-image img {
+        max-width: 90%;
+    }
+
+    /* Adjust values grid */
+    .values-grid {
+        display: grid;
+        grid-template-columns: 1fr; /* Single column on mobile */
+        gap: 15px;
+    }
+
+    /* Reduce padding and font sizes in value cards */
+    .value-card {
+        width: 100%;
+        padding: 1.5rem;
+    }
+
+    .value-card h3 {
+        font-size: 1.2rem;
+    }
+
+    /* Timeline Mobile Optimization */
+    .timeline {
+        padding: 20px 10px;
+    }
+
+    .timeline::before {
+        left: 10px; /* Align the vertical line to the left */
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 20px;
+    }
+
+    .timeline-item::before {
+        left: 10px;
+    }
+
+    .timeline-content {
+        width: 90%;
+        text-align: left;
+        padding: 1rem;
+    }
+
+    /* Reduce glow effects on mobile to improve performance */
+    .value-card:hover {
+        transform: scale(1.02);
+        box-shadow: none;
+    }
+}
