@@ -2185,28 +2185,28 @@ body {
     }
 }
 .about-title::after {
-    width: 14%; /* Adjust underline width only for About page */
+    width: 14%; 
 }
 .event-card {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
-  border-radius: 8px; /* Slightly rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  border-radius: 8px;
   transition: transform 0.3s ease-in-out;
 }
 
 .event-card:hover {
-  transform: translateY(-5px); /* Adds slight lift on hover */
+  transform: translateY(-5px); 
 }
 .section-title {
-  font-size: 2rem; /* Slightly larger for emphasis */
+  font-size: 2rem; 
   margin-bottom: 20px;
-  color: #333; /* Darker for better contrast */
+  color: #333; 
 }
 button, .register-btn, .resources-btn, .recording-btn {
   transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
 button:hover, .register-btn:hover, .resources-btn:hover, .recording-btn:hover {
-  background-color: #0088cc; /* FOSS blue */
+  background-color: #0088cc; 
   color: #fff;
-  transform: scale(1.05); /* Slight zoom effect */
+  transform: scale(1.05); 
 }
