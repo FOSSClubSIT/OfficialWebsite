@@ -2187,3 +2187,26 @@ body {
 .about-title::after {
     width: 14%; /* Adjust underline width only for About page */
 }
+.event-card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  border-radius: 8px; /* Slightly rounded corners */
+  transition: transform 0.3s ease-in-out;
+}
+
+.event-card:hover {
+  transform: translateY(-5px); /* Adds slight lift on hover */
+}
+.section-title {
+  font-size: 2rem; /* Slightly larger for emphasis */
+  margin-bottom: 20px;
+  color: #333; /* Darker for better contrast */
+}
+button, .register-btn, .resources-btn, .recording-btn {
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+button:hover, .register-btn:hover, .resources-btn:hover, .recording-btn:hover {
+  background-color: #0088cc; /* FOSS blue */
+  color: #fff;
+  transform: scale(1.05); /* Slight zoom effect */
+}
