@@ -11,45 +11,46 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-<header class="header">
-  <nav class="navbar">
-    <a href="./index.html" class="logo">
-      <img src="./assets/logo.png" alt="FOSS Logo">
-      <span>FOSS</span>
-    </a>
-    <div class="hamburger">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-    </div>
-    <ul class="nav-links">
-      <li><a href="./index.html">Home</a></li>
-      <li><a href="./about.html" class="active">About</a></li>
-      <li><a href="./events.html">Events</a></li>
-      <li><a href="./team.html">Team</a></li>
-      <li><a href="./contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
-
+  <header class="header">
+    <nav class="navbar">
+      <a href="./index.html" class="logo">
+        <img src="./assets/Images/logo.svg" alt="FOSS Logo">
+        <span>FOSS</span>
+      </a>
+  
+      <button id="open-menu"  onclick="opensidebar()"><img src="assets/Images/menu_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" height="50px" width="50px" alt=""></button>
+  
+      <ul class="nav-links">
+        <li><button id="close-menu" onclick="closesidebar()"><img src="assets/Images/close_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" height="50px" width="50px" alt=""></button></li>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./about.html" class="active">About</a></li>
+        <li><a href="./projects.html">Projects</a></li>
+        <li><a href="./events.html">Events</a></li>
+        <li><a href="./team.html">Team</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <div id="overlay" onclick="closesidebar()" aria-hidden="true"></div>
 <section class="page-banner parallax">
   <div class="page-banner-content fade-in-up">
-    <h1 class="glitch-text" data-text="Our Story">Our Story</h1>
+    <h1 class="glitch-text" data-text="Our Purpose">Our Purpose</h1>
     <p>Building the future of open source, one commit at a time</p>
   </div>
 </section>
 
 <section class="mission-section fade-in-up">
   <div class="container">
-    <h2 class="section-title">Our Mission</h2>
+    <h2 class="section-title about-title">Our Mission</h2>
     <div class="mission-content">
       <div class="mission-text">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+        <p>At FOSS Club SIT, we empower aspiring developers through learning, collaboration, and open-source contributions. Our goal is to bridge the gap between academics and real-world tech, fostering innovation and growth. Join us in shaping the future!</p>
         <div class="mission-stats">
           <div class="stat">
             <i class="fas fa-code-branch"></i>
-            <span>1000+</span>
-            <p>Commits</p>
+            <span>10+</span>
+            <p>Sessions</p>
           </div>
           <div class="stat">
             <i class="fas fa-users"></i>
@@ -58,13 +59,10 @@
           </div>
           <div class="stat">
             <i class="fas fa-calendar-check"></i>
-            <span>50+</span>
-            <p>Events</p>
+            <span>5+</span>
+            <p>Projects</p>
           </div>
         </div>
-      </div>
-      <div class="mission-image">
-        <img src="./assets/about/mission.jpg" alt="Our Mission">
       </div>
     </div>
   </div>
@@ -72,60 +70,160 @@
 
 <section class="values-section slide-in-right">
   <div class="container">
-    <h2 class="section-title">Our Values</h2>
+    <h2 class="section-title about-title">Our Values</h2>
     <div class="values-grid">
-      <div class="value-card">
+      <div class="value-card left">
         <i class="fas fa-handshake"></i>
         <h3>Collaboration</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+        <p>We thrive on teamwork, sharing ideas, and growing together by contributing to open-source projects.</p>
       </div>
-      <div class="value-card">
+      <div class="value-card right">
         <i class="fas fa-lightbulb"></i>
         <h3>Innovation</h3>
-        <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+        <p>We foster creativity by experimenting, solving problems, and pushing the boundaries of technology.</p>
       </div>
-      <div class="value-card">
+      <div class="value-card left">
         <i class="fas fa-users"></i>
         <h3>Community</h3>
-        <p>Nulla facilisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames.</p>
+        <p>We build an inclusive space where students collaborate, mentor, and create meaningful projects.</p>
       </div>
-      <div class="value-card">
+      <div class="value-card right">
         <i class="fas fa-lock-open"></i>
         <h3>Transparency</h3>
-        <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
+        <p>We believe in openness, ensuring knowledge, code, and decisions are freely accessible to all.</p>
+
       </div>
+    </div>
+  </div>
+
+  <!-- Add some CSS for styling -->
+  <style>
+    .values-section {
+      padding: 50px 0;
+      background-color: rgb(22, 22, 22);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    
+    .values-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .value-card {
+      width: 45%;
+      background-color: rgb(19, 19, 19);
+      margin-bottom: 30px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .value-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .value-card i {
+      font-size: 2rem;
+      color: rgb(0, 255, 136);
+      margin-bottom: 15px;
+    }
+
+    .value-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .value-card p {
+      font-size: 1rem;
+      color: #ffffff;
+    }
+
+    .left {
+      text-align: center; /* Align content to the left */
+    }
+
+    .right {
+      text-align: center; /* Align content to the right */
+    }
+    
+    @media (max-width: 768px) {
+      .value-card {
+        width: 100%;
+        text-align: center; /* Center alignment for smaller screens */
+        margin-bottom: 20px;
+      }
+      
+      .left, .right {
+        text-align: center; /* Override alignment for mobile view */
+      }
+    }
+  </style>
+</section>
+
+
+<section class="timeline-section fade-in-up">
+  <div class="container">
+    <h2 class="section-title about-title">Our Journey</h2>
+    <div class="timeline">
+      <div class="timeline-start"></div>
+
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h3 class="timeline-year">January 2024</h3>
+          <h4 class="timeline-title">Club Formation</h4>
+          <p>The club was officially formed with a vision to create a thriving community of tech enthusiasts.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h3 class="timeline-year">April 2024</h3>
+          <h4 class="timeline-title">FOSS in AI</h4>
+          <p>An event exploring AI and open source, featuring a guest speaker, held on <strong>April 19th</strong> at Symbiosis Institute of Technology Pune.</p>
+
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h3 class="timeline-year">July 2024</h3>
+          <h4 class="timeline-title">FOSS Hack 2024</h4>
+          <p>The club co-hosted <strong>FOSSHACK 2024</strong> with AIML SIT Pune on <strong>July 27th & 28th</strong>, focusing on innovation and open-source development.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h3 class="timeline-year">July 2024</h3>
+          <h4 class="timeline-title">Sponsored OpenWRT Project</h4>
+          <p>The club worked on porting OpenWRT to Archer A6 V4, enhancing its capabilities with open-source firmware.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h3 class="timeline-year">February 2025</h3>
+          <h4 class="timeline-title">TechFest Workshop</h4>
+          <p>The club hosted a workshop at TechFest, introducing students to open-source collaboration and real-world applications.</p>
+        </div>
+      </div>
+
+      <div class="timeline-end"></div>
     </div>
   </div>
 </section>
 
-<section class="timeline-section fade-in-up">
-  <div class="container">
-    <h2 class="section-title">Our Journey</h2>
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-content">
-          <h3>2023</h3>
-          <h4>Club Formation</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-content">
-          <h3>2024</h3>
-          <h4>First Major Project</h4>
-          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-content">
-          <h3>2025</h3>
-          <h4>Community Growth</h4>
-          <p>Nulla facilisi. Pellentesque habitant morbi tristique senectus et netus.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+
+
 
 <section class="tech-stack-section slide-in-left">
   <div class="container">
@@ -164,51 +262,184 @@
     <h2 class="section-title">Join Our Community</h2>
     <div class="community-content">
       <div class="community-text">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-        <div class="community-cta">
+        <p>Be a part of a vibrant community that thrives on collaboration, innovation, and learning! At the FOSS Club, we empower students to contribute to open-source projects, build impactful solutions, and grow as developers while making a difference in the world of technology.</p> <div class="community-cta">
           <a href="./contact.html" class="cta-button glow-effect">Get Involved</a>
-          <a href="./projects.html" class="cta-button outline-effect">View Projects</a>
+          <a href="./projects.html" class="cta-button glow-effect">View Projects</a>
+          <div class="partners-grid">
+            <div class="partner-card">
+              <a href="https://www.instagram.com/fossclubsit" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+                <h4>Instagram</h4>
+              </a>
+            </div>
+            <div class="partner-card">
+              <a href="https://www.linkedin.com/company/foss-club-sitp" target="_blank">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQx72nL2ZQw4THXkQQ84xz7fQt9Ttoe9H2Eg&s" alt="LinkedIn">
+                <h4>LINKEDIN</h4>
+              </a>
+            </div>
+            <div class="partner-card">
+              <a href="https://www.linkedin.com/company/foss-club-sitp" target="_blank">
+                <img src="https://www.svgrepo.com/show/70622/whatsapp.svg" alt="WhatsApp">
+                <h4>WHATSAPP</h4>
+              </a>
+            </div>
+            
+            
+          </div>
         </div>
       </div>
       <div class="community-benefits">
         <div class="benefit-item">
           <i class="fas fa-graduation-cap"></i>
           <h4>Learn & Grow</h4>
-          <p>Gain practical experience through real projects</p>
+          <p>Enhance your technical skills by contributing to real-world open-source projects and participating in workshops and hackathons.</p>
         </div>
         <div class="benefit-item">
           <i class="fas fa-comments"></i>
           <h4>Network</h4>
-          <p>Connect with like-minded developers</p>
+          <p>Connect with passionate developers, industry professionals, and mentors who share your enthusiasm for open-source development.</p>
         </div>
         <div class="benefit-item">
           <i class="fas fa-rocket"></i>
           <h4>Build</h4>
-          <p>Create impactful open source solutions</p>
+          <p>Create impactful solutions that contribute to global open-source initiatives and leave a lasting mark on the tech community.</p>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- Add some CSS for styling -->
+  <style>
+    .community-section {
+      padding: 60px 0;
+      background-color: #000000; /* Light background for contrast */
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    
+
+    .community-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start; /* Align items to the top */
+    }
+
+    .community-text {
+      width: 60%; /* Text section takes up more space */
+      padding-right: 20px; /* Space between text and benefits */
+    }
+
+    .community-text p {
+      font-size: 1.1rem;
+      color: #ffffff; /* Slightly lighter text color */
+      line-height: 1.6; /* Improved readability */
+    }
+
+    .community-cta {
+      margin-top: 20px; /* Space above buttons */
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .glow-effect {
+      background-color: #000000; /* Primary color for the button */
+      color: #fff; /* White text */
+      transition: 0.3s ease-in-out;
+    }
+
+    .glow-effect:hover {
+      box-shadow: 0 0 15px rgba(0,123,255,0.8); /* Glow effect on hover */
+    }
+
+    
+
+    .outline-effect:hover {
+      background-color: #007bff; /* Fill color on hover */
+      color: #fff; /* Change text to white on hover */
+    }
+
+    .community-benefits {
+      width: 35%; /* Benefits section takes up less space */
+      display: flex;
+      flex-direction: column;
+      gap: 20px; /* Space between benefit items */
+    }
+
+    .benefit-item {
+      background-color: #ffffff; /* White background for benefits */
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .benefit-item:hover {
+      transform: translateY(-5px); /* Lift effect on hover */
+    }
+
+    .benefit-item i {
+      font-size: 2rem;
+      color: #007bff; /* Icon color matches primary color */
+      margin-bottom: 10px;
+    }
+
+    .benefit-item h4 {
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+      color: #fff; /* Darker title color for benefits */
+    }
+
+    .benefit-item p {
+      font-size: 1rem;
+      color: #fff; /* Lighter text for descriptions */
+    }
+
+    @media (max-width: 768px) {
+      .community-text, .community-benefits {
+        width: 100%; /* Stack sections on smaller screens */
+        padding-right: 0; /* Remove right padding on small screens */
+        text-align: center; /* Center align text on mobile */
+        margin-bottom: 30px; /* Space below sections on mobile */
+       }
+      
+     .community-content {
+       flex-direction:center;
+       flex-direction: column; /* Stack content vertically on mobile */
+       align-items: center; 
+     }
+    }
+  
+   </style>
 </section>
+
 
 <section class="partners-section slide-in-right">
   <div class="container">
     <h2 class="section-title">Our Partners</h2>
     <div class="partners-grid">
       <div class="partner-card">
-        <img src="./assets/partners/partner1.png" alt="Partner 1">
-        <h4>Tech Corp</h4>
+        <img src="https://avatars.githubusercontent.com/u/61445214?s=200&v=4" alt="Partner 1">
+        <h4>FOSS UNITED</h4>
       </div>
       <div class="partner-card">
-        <img src="./assets/partners/partner2.png" alt="Partner 2">
-        <h4>Innovation Labs</h4>
-      </div>
-      <div class="partner-card">
-        <img src="./assets/partners/partner3.png" alt="Partner 3">
-        <h4>Dev Community</h4>
+        <img src="https://www.mathworks.com/academia/tah-portal/symbiosis-institute-of-technology-pune-40493717/_jcr_content/schoolLogo.adapt.full.medium.png/1668594867923.png" alt="Partner 2">
+        <h4>SIT PUNE</h4>
       </div>
     </div>
-  </div>
 </section>
 
 <footer class="footer">

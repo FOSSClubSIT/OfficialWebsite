@@ -1,15 +1,12 @@
-const hamburger = document.querySelector('.hamburger');
-  const navlinks = document.querySelector('.nav-links');
-  let menuOpen = false;
+const navlinks = document.querySelector('.nav-links');
+const Overlay = document.getElementById("overlay")
+function opensidebar(){
+  navlinks.classList.add("show")
+  Overlay.style.display = "block"
 
-  hamburger.addEventListener('click',()=>{
-    if (menuOpen == false) {
-      navlinks.style.display = "flex";
-      menuOpen = true;
+}
 
-    } else if(menuOpen == true) {
-      navlinks.style.display = "none";
-      menuOpen = false;
-    }
-
-  });
+function closesidebar(){
+  navlinks.classList.remove("show")
+  Overlay.style.display = "none"
+}
