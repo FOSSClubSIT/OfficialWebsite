@@ -150,6 +150,7 @@ body {
 }
 .page-banner-content h1 {
   font-size: 2.5rem;
+  text-align: center;
 }
 .page-content {
   max-width: 800px;
@@ -760,6 +761,7 @@ body {
     font-size: 4rem;
     font-weight: bold;
     text-shadow: 0 0 10px var(--accent-green);
+    margin-bottom: 10px;
 }
 
 .glitch-text::before,
@@ -2136,7 +2138,9 @@ body {
 }
 
 .partners-grid {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centers items */
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
@@ -2149,6 +2153,12 @@ body {
     text-align: center;
     border: 1px solid var(--dark-green);
     transition: all 0.3s ease;
+}
+.partner-card a h4 {
+    color: white !important; /* Forces white text */
+}
+a {
+    text-decoration: none !important;
 }
 
 .partner-card:hover {
@@ -2186,4 +2196,132 @@ body {
 }
 .about-title::after {
     width: 14%; /* Adjust underline width only for About page */
+}
+@media screen and (max-width: 768px) {
+    /* Adjust the padding for sections */
+    .mission-section, .values-section {
+        padding: 2rem 1rem;
+    }
+
+    /* Make headings more readable on mobile */
+    .mission-heading, .section-title {
+        font-size: 2rem;
+    }
+
+    /* Stack mission stats vertically */
+    .mission-stats {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    /* Ensure images fit properly */
+    .mission-image img {
+        max-width: 90%;
+    }
+
+    /* Adjust values grid */
+    .values-grid {
+        display: grid;
+        grid-template-columns: 1fr; /* Single column on mobile */
+        gap: 15px;
+        padding: 1rem; /* Adds padding on both sides */
+    }
+
+    /* Reduce padding and font sizes in value cards */
+    .value-card {
+        width: 100%;
+        padding: 1.5rem;
+    }
+
+    .value-card h3 {
+        font-size: 1.2rem;
+    }
+
+    /* Timeline Mobile Optimization */
+    .timeline {
+        padding: 20px 10px;
+    }
+
+    .timeline::before {
+        left: 10px; /* Align the vertical line to the left */
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 20px;
+    }
+
+    .timeline-item::before {
+        left: 10px;
+    }
+
+    .timeline-content {
+        width: 90%;
+        text-align: left;
+        padding: 1rem;
+    }
+
+    /* Reduce glow effects on mobile to improve performance */
+    .value-card:hover {
+        transform: scale(1.02);
+        box-shadow: none;
+    }
+
+     /* Add padding so cards don’t touch screen edges */
+     .partners-grid, .benefits-container {
+        padding: 1rem;
+    }
+
+    /* Adjust partner and benefit cards */
+    .partner-card, .benefit-item {
+        max-width: 85%; /* Prevents full width stretching */
+        margin: 0 auto; /* Centers cards */
+        padding: 1rem; /* Adjust padding for better spacing */
+        
+    }
+
+    /* Adjust icon alignment */
+    .benefit-item i {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 0.5rem;
+    }
+    .partners-grid {
+        display: flex;
+        justify-content: center;
+        gap: 10px; /* Reduces space between cards */
+        flex-wrap: wrap; /* Ensures responsiveness */
+    }
+    
+    /* Adjust partner card size and alignment */
+    .partner-card {
+        width: 120px; /* Slightly larger width */
+        height: 140px; /* Slightly increased height */
+        padding: 0.8rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border-radius: 10px;
+    }
+    
+    /* Ensure social media names fit properly */
+    .partner-card a {
+        color: white !important;
+        text-decoration: none;
+        font-size: 0.9rem;
+        text-align: center;
+        display: block;
+    }
+    /* Ensure images scale properly within the cards */
+    .partner-card img {
+        width: 80%;
+        height: auto;
+        display: block;
+        margin: 0 auto 8px; /* Centers the icon and adds spacing below */    
+    }
 }
