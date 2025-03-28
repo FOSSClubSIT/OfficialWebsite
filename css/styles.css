@@ -2294,7 +2294,7 @@ button:hover, .register-btn:hover, .resources-btn:hover, .recording-btn:hover {
         box-shadow: none;
     }
 
-     /* Add padding so cards don’t touch screen edges */
+     /* Add padding so cards don't touch screen edges */
      .partners-grid, .benefits-container {
         padding: 1rem;
     }
@@ -2348,4 +2348,137 @@ button:hover, .register-btn:hover, .resources-btn:hover, .recording-btn:hover {
         display: block;
         margin: 0 auto 8px; /* Centers the icon and adds spacing below */    
     }
+}
+
+/* Contact Page Styles */
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.contact-info {
+  background: linear-gradient(145deg, #111, #1a1a1a);
+  padding: 2rem;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 204, 102, 0.1);
+}
+
+.contact-info h2 {
+  margin-bottom: 2rem;
+  color: #00cc66;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(26, 26, 26, 0.8);
+  border: 1px solid rgba(0, 204, 102, 0.2);
+  border-radius: 10px;
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background: rgba(0, 204, 102, 0.1);
+  transform: translateX(10px);
+}
+
+.social-link i {
+  font-size: 1.5rem;
+  color: #00cc66;
+}
+
+.contact-details {
+  margin-top: 2rem;
+}
+
+.contact-details p {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.contact-details i {
+  color: #00cc66;
+}
+
+.contact-form {
+  background: linear-gradient(145deg, #111, #1a1a1a);
+  padding: 2rem;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 204, 102, 0.1);
+}
+
+.contact-form h2 {
+  margin-bottom: 2rem;
+  color: #00cc66;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 1rem;
+  background: rgba(26, 26, 26, 0.8);
+  border: 1px solid rgba(0, 204, 102, 0.2);
+  border-radius: 10px;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #00cc66;
+  box-shadow: 0 0 0 2px rgba(0, 204, 102, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  .contact-info,
+  .contact-form {
+    padding: 1.5rem;
+  }
+
+  .social-link {
+    padding: 0.8rem;
+  }
+
+  .social-link i {
+    font-size: 1.2rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 0.8rem;
+  }
 }
