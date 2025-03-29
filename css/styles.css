@@ -390,9 +390,8 @@ body {
 /* Project Cards Styling */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    padding: 2rem;
+    margin-top: 2rem;
 }
 
 .project-card {
@@ -1290,6 +1289,9 @@ body {
 }
 
 .project-card {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 1rem;
     background: linear-gradient(145deg, #111, #1a1a1a);
     border: 1px solid var(--dark-green);
     border-radius: 15px;
@@ -1407,15 +1409,13 @@ body {
     box-shadow: 0 5px 15px rgba(0, 204, 102, 0.2);
 }
 
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
 
 @media (max-width: 768px) {
     .project-card.featured {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
         grid-template-columns: 1fr;
     }
     
