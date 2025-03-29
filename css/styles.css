@@ -150,6 +150,8 @@ body {
 }
 .page-banner-content h1 {
   font-size: 2.5rem;
+  text-align: center;
+
 }
 .page-content {
   max-width: 800px;
@@ -759,6 +761,7 @@ body {
     font-size: 4rem;
     font-weight: bold;
     text-shadow: 0 0 10px var(--accent-green);
+    margin-bottom: 10px;
 }
 
 .glitch-text::before,
@@ -2136,7 +2139,9 @@ body {
 }
 
 .partners-grid {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centers items */
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
@@ -2149,6 +2154,12 @@ body {
     text-align: center;
     border: 1px solid var(--dark-green);
     transition: all 0.3s ease;
+}
+.partner-card a h4 {
+    color: white !important; /* Forces white text */
+}
+a {
+    text-decoration: none !important;
 }
 
 .partner-card:hover {
@@ -2185,5 +2196,375 @@ body {
     }
 }
 .about-title::after {
-    width: 14%; /* Adjust underline width only for About page */
+    width: 14%; 
 }
+.event-card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.event-card:hover {
+  transform: translateY(-5px); 
+}
+.section-title {
+  font-size: 2rem; 
+  margin-bottom: 20px;
+  color: #333; 
+}
+button, .register-btn, .resources-btn, .recording-btn {
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+button:hover, .register-btn:hover, .resources-btn:hover, .recording-btn:hover {
+  background-color: #0088cc; 
+  color: #fff;
+  transform: scale(1.05); 
+}
+@media screen and (max-width: 768px) {
+    /* Adjust the padding for sections */
+    .mission-section, .values-section {
+        padding: 2rem 1rem;
+    }
+
+    /* Make headings more readable on mobile */
+    .mission-heading, .section-title {
+        font-size: 2rem;
+    }
+
+    /* Stack mission stats vertically */
+    .mission-stats {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    /* Ensure images fit properly */
+    .mission-image img {
+        max-width: 90%;
+    }
+
+    /* Adjust values grid */
+    .values-grid {
+        display: grid;
+        grid-template-columns: 1fr; /* Single column on mobile */
+        gap: 15px;
+        padding: 1rem; /* Adds padding on both sides */
+    }
+
+    /* Reduce padding and font sizes in value cards */
+    .value-card {
+        width: 100%;
+        padding: 1.5rem;
+    }
+
+    .value-card h3 {
+        font-size: 1.2rem;
+    }
+
+    /* Timeline Mobile Optimization */
+    .timeline {
+        padding: 20px 10px;
+    }
+
+    .timeline::before {
+        left: 10px; /* Align the vertical line to the left */
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 20px;
+    }
+
+    .timeline-item::before {
+        left: 10px;
+    }
+
+    .timeline-content {
+        width: 90%;
+        text-align: left;
+        padding: 1rem;
+    }
+
+    /* Reduce glow effects on mobile to improve performance */
+    .value-card:hover {
+        transform: scale(1.02);
+        box-shadow: none;
+    }
+
+     /* Add padding so cards don't touch screen edges */
+     .partners-grid, .benefits-container {
+        padding: 1rem;
+    }
+
+    /* Adjust partner and benefit cards */
+    .partner-card, .benefit-item {
+        max-width: 85%; /* Prevents full width stretching */
+        margin: 0 auto; /* Centers cards */
+        padding: 1rem; /* Adjust padding for better spacing */
+        
+    }
+
+    /* Adjust icon alignment */
+    .benefit-item i {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 0.5rem;
+    }
+    .partners-grid {
+        display: flex;
+        justify-content: center;
+        gap: 10px; /* Reduces space between cards */
+        flex-wrap: wrap; /* Ensures responsiveness */
+    }
+    
+    /* Adjust partner card size and alignment */
+    .partner-card {
+        width: 120px; /* Slightly larger width */
+        height: 140px; /* Slightly increased height */
+        padding: 0.8rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border-radius: 10px;
+    }
+    
+    /* Ensure social media names fit properly */
+    .partner-card a {
+        color: white !important;
+        text-decoration: none;
+        font-size: 0.9rem;
+        text-align: center;
+        display: block;
+    }
+    /* Ensure images scale properly within the cards */
+    .partner-card img {
+        width: 80%;
+        height: auto;
+        display: block;
+        margin: 0 auto 8px; /* Centers the icon and adds spacing below */    
+    }
+}
+
+/* Contact Page Styles */
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.contact-info {
+  background: linear-gradient(145deg, #111, #1a1a1a);
+  padding: 2rem;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 204, 102, 0.1);
+}
+
+.contact-info h2 {
+  margin-bottom: 2rem;
+  color: #00cc66;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(26, 26, 26, 0.8);
+  border: 1px solid rgba(0, 204, 102, 0.2);
+  border-radius: 10px;
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background: rgba(0, 204, 102, 0.1);
+  transform: translateX(10px);
+}
+
+.social-link i {
+  font-size: 1.5rem;
+  color: #00cc66;
+}
+
+.contact-details {
+  margin-top: 2rem;
+}
+
+.contact-details p {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.contact-details i {
+  color: #00cc66;
+}
+
+.contact-form {
+  background: linear-gradient(145deg, #111, #1a1a1a);
+  padding: 2rem;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 204, 102, 0.1);
+}
+
+.contact-form h2 {
+  margin-bottom: 2rem;
+  color: #00cc66;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 1rem;
+  background: rgba(26, 26, 26, 0.8);
+  border: 1px solid rgba(0, 204, 102, 0.2);
+  border-radius: 10px;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #00cc66;
+  box-shadow: 0 0 0 2px rgba(0, 204, 102, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  .contact-info,
+  .contact-form {
+    padding: 1.5rem;
+  }
+
+  .social-link {
+    padding: 0.8rem;
+  }
+
+  .social-link i {
+    font-size: 1.2rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 0.8rem;
+  }
+}
+/* Technical Team Grid */
+.team-grid.members {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+    gap: 20px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Individual Card Style - Wider & Shorter */
+.team-grid.members .team-card {
+    width: 100%;
+    max-width: 320px; /* Increased width */
+    height: 500px; /* Reduced height */
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    background-color: #1a1a1a;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Hover effect */
+.team-grid.members .team-card:hover {
+    transform: translateY(-8px);
+}
+
+/* Member Name - At the top */
+.team-grid.members .member-info {
+    order: -1; /* Moves the name to the top */
+    width: 100%;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Member Name Styling */
+.team-grid.members .member-info h3 {
+    color: #c4e3cb;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Image - Now takes up full available space */
+.team-grid.members .member-image {
+    flex-grow: 1;
+    width: 100%;
+}
+.team-grid.members .member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+/* Responsive for tablets */
+@media (max-width: 1024px) {
+    .team-grid.members {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .team-grid.members .team-card {
+        max-width: 300px;
+        height: 450px; /* Slightly smaller on tablets */
+    }
+}
+
+/* Responsive for mobile devices */
+@media (max-width: 768px) {
+    .team-grid.members {
+        grid-template-columns: 1fr;
+    }
+    .team-grid.members .team-card {
+        max-width: 100%;
+        height: 500px; /* Keep it compact */
+    }
+}
+
+ 
