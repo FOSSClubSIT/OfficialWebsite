@@ -1,0 +1,30 @@
+.about-us{
+    /* outline: solid 2px; */
+    background-color:#1a1a1a ;
+    padding: 2rem;
+    display: flex;
+}
+
+.about-us h2{
+    text-align: center;
+
+}
+
+.about-us p {
+    margin-top: 1rem;
+    font-size: 18px;
+}
+
+.about-us button{
+    border: 0;
+
+}
+
+.hero {
+    background-image: url("../assets/bg.png");
+    /* filter: blur(8px); */
+    height: 100dvh;
+    width: 100dvw;
+    background-attachment: scroll;
+}
+
