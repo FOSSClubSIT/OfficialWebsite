@@ -2641,5 +2641,110 @@ footer p{
     color: #ffffff;
     text-align: center;
 }
+.about-us {
+    background: linear-gradient(135deg, #121212, #1a1a1a); /* Smooth dark theme */
+    padding: 80px 20px;
+    color: #e3e3e3;
+  }
+  
+  .about-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    max-width: 1100px;
+    margin: auto;
+  }
+  
+  .about-image img {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 255, 136, 0.4); /* Subtle glow */
+    animation: popIn 1s ease-in-out;
+  }
+  
+  .about-content {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .about-content h2 {
+    font-size: 2.2rem;
+    color: #00ff88; /* FOSS Green */
+    margin-bottom: 12px;
+  }
+  
+  .about-content p {
+    font-size: 1.1rem;
+    color: #d3d3d3; /* Softer white */
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  
+  .cta-buttons {
+    margin-top: 15px;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #00ff88;
+    color: #121212;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+  }
+  
+  .cta-button:hover {
+    background: #00cc66;
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.6);
+  }
+  
+  /* Animations */
+  @keyframes popIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-in-out forwards;
+  }
+  
+  .fade-in-delay {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-in-out forwards 0.4s;
+  }
+  
+  @keyframes fadeInUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .about-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .about-image img {
+      max-width: 300px;
+    }
+  }
+  .about-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .about-image {
+    width: 45%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+    
 
  
