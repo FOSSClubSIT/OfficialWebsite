@@ -6,7 +6,10 @@
 body {
   background-color: #000;
   color: #fff;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
   overflow-x: hidden;
 }
 .header {
@@ -73,7 +76,7 @@ body {
   padding: 2rem;
 }
 .hero-content h1 {
-  font-size: clamp(1.5rem, calc(1.5rem + 1vw), 3rem);
+  font-size: clamp(1.5rem, calc(1.5rem + 4vw), 5rem);
   margin-bottom: 1rem;
 }
 .hero-content p {
@@ -392,9 +395,8 @@ body {
 /* Project Cards Styling */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    padding: 2rem;
+    margin-top: 2rem;
 }
 
 .project-card {
@@ -985,7 +987,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
-    max-width: 1200px;
+    /* max-width: 1200px; */
     margin: 0 auto;
 }
 
@@ -1293,6 +1295,9 @@ body {
 }
 
 .project-card {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 1rem;
     background: linear-gradient(145deg, #111, #1a1a1a);
     border: 1px solid var(--dark-green);
     border-radius: 15px;
@@ -1410,15 +1415,13 @@ body {
     box-shadow: 0 5px 15px rgba(0, 204, 102, 0.2);
 }
 
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
 
 @media (max-width: 768px) {
     .project-card.featured {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
         grid-template-columns: 1fr;
     }
     
@@ -2210,7 +2213,7 @@ a {
 .section-title {
   font-size: 2rem; 
   margin-bottom: 20px;
-  color: #333; 
+  color: #ffffff; 
 }
 button, .register-btn, .resources-btn, .recording-btn {
   transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
@@ -2565,6 +2568,78 @@ button:hover, .register-btn:hover, .resources-btn:hover, .recording-btn:hover {
         max-width: 100%;
         height: 500px; /* Keep it compact */
     }
+}
+/*Add about section in home page, Add nav bar on footer*/
+.about-us{
+    /* outline: solid 2px; */
+    background-color:#2e90fa ;
+    padding: 2rem;
+    display: flex;
+}
+
+.about-us h2{
+    text-align: center;
+
+}
+
+.about-us p {
+    margin-top: 1rem;
+    font-size: 18px;
+}
+
+.about-us button{
+    border: 0;
+
+}
+
+.hero {
+    background-image: url("../assets/bg.png");
+    /* filter: blur(8px); */
+    height: 100dvh;
+    width: 100dvw;
+    background-attachment: scroll;
+}
+ 
+footer p{
+    margin-bottom: 1rem;
+}
+
+.nav-links-footer{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.nav-links-footer li a {
+    text-decoration: none;
+    color: aliceblue;
+    position: relative;
+}
+
+.nav-links-footer li a.active::after {
+    width: 100%;
+}
+.nav-links-footer li a::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, #00cc66, #00aadd);
+    transition: width 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .nav-links-footer{
+        flex-direction: column;
+    }
+}
+
+.achievements-content h2,.impact-section h2,.featured-section h2 {
+    color: #ffffff;
+    text-align: center;
 }
 
  
