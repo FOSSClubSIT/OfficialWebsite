@@ -19,7 +19,7 @@
       <span>FOSS</span>
     </a>
 
-    <button id="open-menu"  onclick="opensidebar()"><img src="assets/Images/menu_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" height="50px" width="50px" alt=""></button>
+    <button id="open-menu" onclick="opensidebar()"><img src="assets/Images/menu_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" height="50px" width="50px" alt=""></button>
 
     <ul class="nav-links">
       <li><button id="close-menu" onclick="closesidebar()"><img src="assets/Images/close_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" height="50px" width="50px" alt=""></button></li>
@@ -61,148 +61,246 @@
   </div>
 </section>
 
-<section class="about-us">
-  <article>
-  <h2>About Us</h2>
-  <p>Welcome to FOSSClub! We are a passionate community of students who came together in college with a shared vision: to promote and contribute to the world of Free and Open Source Software (FOSS). What started as a simple idea among a few like-minded individuals has now blossomed into a thriving club dedicated to learning, collaborating, and creating.</p>
-  <p>At FOSSClub, we believe that technology should be open, accessible, and inclusive. Our mission is to educate, empower, and inspire students to engage with FOSS, not only by using it but by contributing to its growth. We offer a variety of workshops, coding challenges, and collaborative projects, all designed to foster a deeper understanding of open-source tools and their potential to make a difference in the world.</p>
-  <p>Whether you’re a beginner or an experienced developer, FOSSClub provides a welcoming environment for everyone to learn, share knowledge, and make meaningful contributions to the open-source ecosystem. Join us, and be part of a community that values innovation, collaboration, and the power of open-source technology.</p>
-  </article>
-</section>
-
-<section class="featured-section">
-  <h2>Featured Projects</h2>
-  <div class="featured-grid">
-    <div class="feature-card">
-      <div class="feature-icon">
-        <i class="fa-brands fa-android" style="color: #00ff88;"></i>
+<section class="terminal-section">
+  <div class="terminal-container">
+    <div class="terminal-code">
+      <div class="terminal-header">
+        <div class="terminal-button"></div>
+        <div class="terminal-button"></div>
+        <div class="terminal-button"></div>
+        <div class="terminal-title">FOSS Club Terminal</div>
       </div>
-      <h3>Android auto</h3>
-      <p>Android auto unit for Vehicle</p>
-      <div class="tech-stack">
-        <span class="tech-tag">Android</span>
+      <div class="terminal-body">
+        <div class="code-line"><span class="prompt">$</span> <span class="command">git clone</span> https://github.com/FOSSClubSIT/OfficialWebsite.git</div>
+        <div class="code-line"><span class="result">Cloning into 'OfficialWebsite'...</span></div>
+        <div class="code-line"><span class="prompt">$</span> <span class="command">cd</span> OfficialWebsite</div>
+        <div class="code-line"><span class="prompt">$</span> <span class="command">npm</span> install</div>
+        <div class="code-line"><span class="result">Installing dependencies...</span></div>
+        <div class="code-line"><span class="prompt">$</span> <span class="command">npm</span> start</div>
+        <div class="code-line"><span class="result">Starting development server...</span></div>
+        <div class="code-line"><span class="success">Server running at http://localhost:3000</span></div>
+        <div class="code-line"><span class="prompt">$</span> <span class="command">echo</span> "Join our community!"</div>
+        <div class="code-line"><span class="result">Join our community!</span></div>
+        <div class="code-line blink"><span class="prompt">$</span> <span class="cursor">|</span></div>
       </div>
-      <a href="projects.html#android-auto" class="learn-more">Learn More</a>
     </div>
-    <div class="feature-card">
-      <div class="feature-icon">
-        <i class="fa-brands fa-linux" style="color: #00ff88;"></i>
-      </div>
-      <h3>Linux form scratch</h3>
-      <p>Compile Linux form scratch</p>
-      <div class="tech-stack">
-        <span class="tech-tag">Linux</span>
-      </div>
-      <a href="projects.html#linux" class="learn-more">Learn More</a>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">
-        <i class="fa-solid fa-server" style="color: #00ff88;"></i>
-      </div>
-      <h3>NAS</h3>
-      <p>Network Attach Server to store your date</p>
-      <div class="tech-stack">
-        <span class="tech-tag">Linux</span>
-        <span class="tech-tag">Twigate</span>
-      </div>
-      <a href="projects.html#edushare" class="learn-more">Learn More</a>
+    <div class="terminal-content">
+      <h2 class="section-heading">Why Choose FOSS?</h2>
+      <div class="section-divider"></div>
+      <p>At FOSS Club SIT, we're passionate about the freedom and innovation that open-source software represents. Our community is built on collaboration, learning, and creating meaningful projects together.</p>
+      <ul class="terminal-features">
+        <li><i class="fas fa-code"></i> <span>Real-world coding experience</span></li>
+        <li><i class="fas fa-users"></i> <span>Supportive community of developers</span></li>
+        <li><i class="fas fa-laptop-code"></i> <span>Hands-on project contribution</span></li>
+        <li><i class="fas fa-certificate"></i> <span>Portfolio-worthy accomplishments</span></li>
+      </ul>
+      <a href="about.html" class="terminal-btn">Learn to Contribute <i class="fas fa-terminal"></i></a>
     </div>
   </div>
 </section>
 
-<section class="impact-section">
-  <h2>Our Impact</h2>
-  <div class="impact-grid">
-    <div class="impact-card">
-      <i class="fas fa-globe"></i>
-      <h3>Global Reach</h3>
-      <p>Contributing to open-source projects used worldwide</p>
+<section class="about-section">
+  <div class="about-container">
+    <div class="about-content">
+      <h2 class="section-heading">About Us</h2>
+      <div class="section-divider"></div>
+      <p>FOSS Club at SIT Pune is a student-led community dedicated to promoting free and open-source software. We believe in learning through collaboration and creating innovative solutions that benefit everyone.</p>
+      <div class="about-features">
+        <div class="feature">
+          <i class="fas fa-code"></i>
+          <span>Collaborative Coding</span>
+        </div>
+        <div class="feature">
+          <i class="fas fa-chalkboard-teacher"></i>
+          <span>Hands-on Workshops</span>
+        </div>
+        <div class="feature">
+          <i class="fas fa-project-diagram"></i>
+          <span>Real-world Projects</span>
+        </div>
+      </div>
+      <a href="about.html" class="learn-more-link">Discover our journey <i class="fas fa-arrow-right"></i></a>
     </div>
-    <div class="impact-card">
-      <i class="fas fa-users"></i>
-      <h3>Community Growth</h3>
-      <p>Building a diverse and inclusive tech community</p>
-    </div>
-    <div class="impact-card">
-      <i class="fas fa-lightbulb"></i>
-      <h3>Innovation</h3>
-      <p>Driving technological advancement through collaboration</p>
+    <div class="about-image">
+      <img src="assets/Images/about-img.jpg" alt="FOSS Club Community">
     </div>
   </div>
 </section>
 
-<!-- <section class="latest-events">
-    <h2 class="section-title">Upcoming Events</h2>
-    <div class="events-preview">
-        <div class="event-preview-card">
-            <div class="event-date">
-                <span class="date">25</span>
-                <span class="month">MAR</span>
-            </div>
-            <div class="event-info">
-                <h3>Open Source Workshop</h3>
-                <p><i class="fas fa-clock"></i> 2:00 PM - 5:00 PM</p>
-                <p><i class="fas fa-map-marker-alt"></i> Room 42, Tech Block</p>
-                <a href="events.html" class="event-link">Learn More</a>
-            </div>
-        </div>
-        <div class="event-preview-card">
-            <div class="event-date">
-                <span class="date">01</span>
-                <span class="month">APR</span>
-            </div>
-            <div class="event-info">
-                <h3>Hackathon 2025</h3>
-                <p><i class="fas fa-clock"></i> 48 Hours</p>
-                <p><i class="fas fa-map-marker-alt"></i> Innovation Hub</p>
-                <a href="events.html" class="event-link">Learn More</a>
-            </div>
-        </div>
+<section class="featured-projects">
+  <div class="featured-header">
+    <h2 class="section-heading">Featured Projects</h2>
+    <div class="section-divider"></div>
+  </div>
+  
+  <div class="project-item">
+    <div class="project-image left">
+      <img src="assets/Images/Android_Auto-Logo.wine.png" alt="Android Auto">
     </div>
-</section> -->
-
-<section class="achievements parallax" style="display: block;"> 
-    <div class="achievements-content">
-        <h2 class="section-title">Our Achievements</h2>
-        <div class="achievements-grid">
-            <div class="achievement-card">
-                <div class="achievement-icon">
-                    <i class="fas fa-trophy"></i>
-                </div>
-                <h3>FOSS Club</h3>
-                <p>Recognized by Open Source Foundation</p>
-            </div>
-            <div class="achievement-card">
-                <div class="achievement-icon">
-                    <i class="fas fa-code-branch"></i>
-                </div>
-                <h3>100+ Commits</h3>
-                <p>Active contribution to open source</p>
-            </div>
-            <div class="achievement-card">
-                <div class="achievement-icon">
-                    <i class="fas fa-handshake"></i>
-                </div>
-                <h3>Workshop</h3>
-                <p>Host Workshop/Event for students</p>
-            </div>
-        </div>
+    <div class="project-details">
+      <div class="project-badge">Featured</div>
+      <h3>Android Auto</h3>
+      <p>An open-source implementation of Android Auto for vehicles, featuring custom UIs and extended functionality beyond the official version. Our solution focuses on user privacy and control.</p>
+      <div class="tech-pills">
+        <span>Android</span>
+        <span>Java</span>
+        <span>Kotlin</span>
+      </div>
+      <a href="projects.html#android-auto" class="project-link">Explore Project <i class="fas fa-arrow-right"></i></a>
     </div>
+  </div>
+  
+  <div class="project-item reverse">
+    <div class="project-image right">
+      <img src="assets/Images/Linux_from_scratch.jpg" alt="Linux From Scratch">
+    </div>
+    <div class="project-details">
+      <h3>Linux From Scratch</h3>
+      <p>A collaborative effort to build a lightweight, customized Linux distribution from source code. Our implementation focuses on performance optimization and educational value for understanding operating system fundamentals.</p>
+      <div class="tech-pills">
+        <span>Linux</span>
+        <span>C</span>
+        <span>Shell</span>
+      </div>
+      <a href="projects.html#linux" class="project-link">Explore Project <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div>
+  
+  <div class="projects-cta">
+    <a href="projects.html" class="cta-button glow-effect">View All Projects</a>
+  </div>
 </section>
 
-<section class="newsletter">
+<section class="achievements-text-section">
+  <div class="achievements-wrapper">
+    <h2 class="section-heading">Our Achievements & Milestones</h2>
+    <div class="section-divider"></div>
+    
+    <div class="achievements-highlights">
+      <div class="highlight-group">
+        <h3 class="highlight-title"><i class="fas fa-trophy"></i> Recognition & Awards</h3>
+        <div class="highlight-content">
+          <p>The FOSS Club has been officially recognized by the <strong>Symbiosis Institute of Technology</strong> as an innovative student-led initiative. Our projects have received acknowledgment from the <strong>FOSS United Foundation</strong>, marking our presence in the wider open-source community.</p>
+          <p>Our Android Auto implementation was featured in the <strong>College Tech Expo 2024</strong>, receiving the <em>"Most Innovative Project"</em> award among 50+ participating teams.</p>
+        </div>
+      </div>
+      
+      <div class="highlight-group">
+        <h3 class="highlight-title"><i class="fas fa-code-branch"></i> Technical Contributions</h3>
+        <div class="highlight-content">
+          <p>Club members have collectively contributed <strong>100+ pull requests</strong> to various open-source projects, with a notable contribution to the <strong>OpenWRT Project</strong> for porting it to Archer A6 V4 routers.</p>
+          <p>We've successfully completed the implementation of 5 major projects including Custom Linux Distro, Android Auto, NAS Solutions, Reinforcement Learning Games, and our own FOSS Club Website.</p>
+        </div>
+      </div>
+      
+      <div class="highlight-group">
+        <h3 class="highlight-title"><i class="fas fa-calendar-check"></i> Events & Community Impact</h3>
+        <div class="highlight-content">
+          <p>Since our formation in January 2024, we've organized <strong>5+ technical workshops</strong> including the successful "FOSS in AI" workshop in April 2024 with over 50 participants.</p>
+          <p>The club co-hosted <strong>FOSSHACK 2024</strong> with AIML SIT Pune, attracting 100+ participants and resulting in 20+ innovative projects over the 36-hour hackathon.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="achievements-stats">
+      <div class="stat-card">
+        <div class="stat-number">30+</div>
+        <div class="stat-label">Active Members</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">5+</div>
+        <div class="stat-label">Major Projects</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">100+</div>
+        <div class="stat-label">GitHub Contributions</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">500+</div>
+        <div class="stat-label">Workshop Participants</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tech-stack-showcase">
+  <div class="tech-showcase-container">
+    <h2 class="section-heading">Technologies We Use</h2>
+    <div class="section-divider"></div>
+    
+    <div class="tech-orbital">
+      <div class="tech-core">
+        <div class="core-label">FOSS</div>
+      </div>
+      <div class="tech-orbit">
+        <div class="tech-planet"><i class="fab fa-python"></i></div>
+        <div class="tech-planet"><i class="fab fa-js"></i></div>
+        <div class="tech-planet"><i class="fab fa-react"></i></div>
+        <div class="tech-planet"><i class="fab fa-node"></i></div>
+        <div class="tech-planet"><i class="fab fa-linux"></i></div>
+        <div class="tech-planet"><i class="fab fa-docker"></i></div>
+        <div class="tech-planet"><i class="fab fa-github"></i></div>
+        <div class="tech-planet"><i class="fab fa-android"></i></div>
+      </div>
+    </div>
+    
+    <div class="tech-categories">
+      <div class="tech-category">
+        <h3>Web Development</h3>
+        <div class="tech-items">
+          <span><i class="fab fa-html5"></i> HTML5</span>
+          <span><i class="fab fa-css3-alt"></i> CSS3</span>
+          <span><i class="fab fa-js"></i> JavaScript</span>
+          <span><i class="fab fa-react"></i> React</span>
+          <span><i class="fab fa-node"></i> Node.js</span>
+        </div>
+      </div>
+      
+      <div class="tech-category">
+        <h3>Systems & DevOps</h3>
+        <div class="tech-items">
+          <span><i class="fab fa-linux"></i> Linux</span>
+          <span><i class="fab fa-docker"></i> Docker</span>
+          <span><i class="fab fa-github"></i> GitHub</span>
+          <span><i class="fas fa-server"></i> Networking</span>
+        </div>
+      </div>
+      
+      <div class="tech-category">
+        <h3>Machine Learning</h3>
+        <div class="tech-items">
+          <span><i class="fab fa-python"></i> Python</span>
+          <span><i class="fas fa-brain"></i> TensorFlow</span>
+          <span><i class="fas fa-chart-line"></i> Data Science</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="newsletter-section">
+  <div class="newsletter-container">
     <div class="newsletter-content">
-        <h2>Stay Updated</h2>
-        <p>Subscribe to our newsletter for latest updates and events</p>
-        <form class="newsletter-form">
-            <input type="email" placeholder="Enter your email" required>
-            <button type="submit" class="cta-button glow-effect">Subscribe</button>
-        </form>
+      <h2 class="section-heading light">Stay Connected</h2>
+      <div class="section-divider light"></div>
+      <p>Join our newsletter to receive the latest updates, event announcements, and opportunities to contribute</p>
+      
+      <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email address" required>
+        <button type="submit" class="submit-btn">Subscribe <i class="fas fa-paper-plane"></i></button>
+      </form>
+      
+      <div class="social-links">
+        <a href="https://github.com/FOSSClubSIT" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.instagram.com/fossclubsit/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/company/foss-club-sitp" target="_blank"><i class="fab fa-linkedin"></i></a>
+      </div>
     </div>
+  </div>
 </section>
 
 <footer class="footer">
-  <p>© 2025 FOSS Club</p>
+  <p>© 2024 FOSS Club</p>
   <ul class="nav-links-footer">
     <li><a href="./index.html" class="active">Home</a></li>
     <li><a href="./about.html">About</a></li>
