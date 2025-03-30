@@ -311,17 +311,58 @@
 
 
 <footer class="footer">
-  <p>© 2024 FOSS Club</p>
-  <ul class="nav-links-footer">
-    <li><a href="./index.html" class="active">Home</a></li>
-    <li><a href="./about.html">About</a></li>
-    <li><a href="./projects.html">Projects</a></li>
-    <li><a href="./events.html">Events</a></li>
-    <li><a href="./team.html">Team</a></li>
-    <li><a href="./contact.html">Contact</a></li>
-  </ul>
+  <div class="footer-content">
+    <div class="logo-section" style="justify-content: flex-start; margin-left: 10px;">
+      <img src="assets\Images\logo_full.png" alt="FOSS Club Logo" class="club-logo" style="width: 160px; height: auto;">
+    </div>
+    <div class="secondary-menu" style="text-align: center; margin: 10px 0;">
+      <a href="./about.html" class="menu-link">About</a>
+      <a href="./projects.html" class="menu-link">Projects</a>
+      <a href="./events.html" class="menu-link">Events</a>
+    </div>
+    <div class="social-links" style="display: flex; justify-content: flex-end; gap: 10px;">
+      <a href="https://www.linkedin.com/company/foss-club-sitp/posts/?feedView=all" class="social-icon" style="width: 60px; height: 60px;"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/FOSSClubSIT" class="social-icon" style="width: 60px; height: 60px;"><i class="fab fa-github"></i></a>
+      <a href="https://www.instagram.com/fossclubsit/" class="social-icon" style="width: 60px; height: 60px;"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.youtube.com/@FOSSClubSIT" class="social-icon" style="width: 60px; height: 60px;"><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
+  <div class="footer-links">
+  </div>
 </footer>
+<style>
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.secondary-menu {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 10px 0;
+}
+.menu-link {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.menu-link:hover {
+  color: #555;
+}
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  font-size: 1.5em;
+  color: #333;
+}
+</style>
 <script src="./js/script.js"></script>
 <script src="./js/navigation.js"></script>
 </body>
 </html>
+
