@@ -321,21 +321,25 @@ body {
     justify-content: center;
     gap: 1rem;
     margin-top: 1rem;
+    margin-left: 10px;
 }
 
 .social-link {
     color: var(--light-green);
     font-size: 1.2rem;
     transition: all 0.3s ease;
-    padding: 0.5rem;
-    border-radius: 50%;
-    background: rgba(0, 0, 0, 0.2);
+    padding: 0; 
+    margin-left: 10px;
+    background: none;
+    display: inline-flex; 
+    align-items: center;
+    justify-content: center;
 }
 
 .social-link:hover {
     color: var(--accent-green);
     transform: translateY(-3px);
-    background: rgba(0, 204, 102, 0.1);
+    background: none; 
 }
 
 .section-title {
@@ -1102,7 +1106,7 @@ body {
     padding-top: 100%;
     overflow: hidden;
     background: #111;
-}
+    
 
 .member-image img {
     position: absolute;
