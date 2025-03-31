@@ -227,9 +227,11 @@ body {
     background: rgba(26, 26, 26, 0.8);
     border: 1px solid var(--dark-green);
     border-radius: 15px;
+    max-width: 400px;
     overflow: hidden;
     transition: all 0.3s ease;
     cursor: pointer;
+
 }
 
 .team-card.leader {
@@ -404,7 +406,8 @@ body {
     background: #1a1a1a;
     border-radius: 10px;
     overflow: hidden;
-    width: 70%;
+    max-width: 70%;
+    min-width: 20rem;
     margin: 4rem;
     transition: all 0.3s ease;
     cursor: pointer;
@@ -1459,7 +1462,8 @@ body {
 
 /* Update team member cards to be smaller than heads */
 .team-card.member {
-    transform: scale(0.9);
+    transform: scale(1);
+    min-width: 18rem;
     background: rgba(26, 26, 26, 0.6);
 }
 
@@ -1478,10 +1482,10 @@ body {
 .team-card.member .member-role {
     font-size: 0.8rem;
 }
-
+  
 /* Adjust grid for members */
 .team-grid.members {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
 }
 
@@ -3894,10 +3898,9 @@ footer p{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap; /* Allows responsiveness */
+  flex-wrap: wrap;
   
-  padding-left: 1rem;
-  margin: 0 auto;
+  
 }
 
 @keyframes fadeInDown {
@@ -3961,6 +3964,8 @@ footer p{
   justify-content: center;
   gap: 20px;
   margin: 10px 0;
+  flex-wrap: wrap;
+  padding: 1rem;
 }
 .menu-link {
   text-decoration: none;
