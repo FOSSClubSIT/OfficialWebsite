@@ -94,4 +94,35 @@
 <script src="js/script.js"></script>
 <script src="./js/navigation.js"></script>
 </body>
+<style>
+
+.social-links {
+  display: flex;           
+  flex-direction: column;  
+  gap: 15px;               
+}
+    .social-links a {
+  background: rgba(45, 45, 45, 0.1);
+  color: #fff;
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background: var(--primary-green);
+  color: #000;
+  
+  transform: translateY(-5px);
+}
+.social-links a:hover i{
+  color:#000;
+  transition: color 0.3s ease;
+}
+</style>
 </html>

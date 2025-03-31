@@ -71,6 +71,9 @@
 <section class="values-section slide-in-right">
   <div class="container">
     <h2 class="section-title about-title">Our Values</h2>
+   
+    <div class="section"></div>
+
     <div class="values-grid">
       <div class="value-card left">
         <i class="fas fa-handshake"></i>
@@ -260,36 +263,54 @@
 <section class="community-section fade-in-up">
   <div class="container">
     <h2 class="section-title">Join Our Community</h2>
+    <div class="section"></div>
     <div class="community-content">
       <div class="community-text">
         <p>Be a part of a vibrant community that thrives on collaboration, innovation, and learning! At the FOSS Club, we empower students to contribute to open-source projects, build impactful solutions, and grow as developers while making a difference in the world of technology.</p> <div class="community-cta">
           <a href="./contact.html" class="cta-button glow-effect">Get Involved</a>
           <a href="./projects.html" class="cta-button glow-effect">View Projects</a>
           <div class="partners-grid">
-            <div class="partner-card">
-              <a href="https://www.instagram.com/fossclubsit" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
-                <h4>Instagram</h4>
-              </a>
-            </div>
-            <div class="partner-card">
+            <div class="social-links">
               <a href="https://www.linkedin.com/company/foss-club-sitp" target="_blank">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQx72nL2ZQw4THXkQQ84xz7fQt9Ttoe9H2Eg&s" alt="LinkedIn">
-                <h4>LinkedIn</h4>
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="https://github.com/FOSSClubSIT" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://www.instagram.com/fossclubsit/" target="_blank">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="https://www.youtube.com/@FOSSClubSIT" target="_blank">
+                <i class="fab fa-youtube"></i>
               </a>
             </div>
-            <div class="partner-card">
-              <a href="https://www.linkedin.com/company/foss-club-sitp" target="_blank">
-                <img src="https://www.svgrepo.com/show/70622/whatsapp.svg" alt="WhatsApp">
-                <h4>Whatsapp</h4>
-              </a>
-            </div>
+            <div class="container">
+              <h2 class="section-title">Our Partners</h2>
+              <div class="partners-grid">
+                
+                <div class="partner-card">
+                  <a href="https://fossunited.org/">
+                  <img src="https://avatars.githubusercontent.com/u/61445214?s=200&v=4" alt="Partner 1">
+                  <h4>FOSS UNITED</h4>
+                </div>
+                </a>
+                
+                <div class="partner-card">
+                  <a href="https://www.sitpune.edu.in//">
+                  <img src="https://www.mathworks.com/academia/tah-portal/symbiosis-institute-of-technology-pune-40493717/_jcr_content/schoolLogo.adapt.full.medium.png/1668594867923.png" alt="Partner 2">
+                  <h4>SIT PUNE</h4>
+                </div>
+                </a>
+              </div>
+              </div>
             
             
           </div>
         </div>
       </div>
+      
       <div class="community-benefits">
+       
         <div class="benefit-item">
           <i class="fas fa-graduation-cap"></i>
           <h4>Learn & Grow</h4>
@@ -322,7 +343,24 @@
       text-align: center;
     }
 
-    
+    .social-links a {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background: var(--primary-green);
+  color: #000;
+  transform: translateY(-5px);
+}
 
     .community-content {
       display: flex;
@@ -381,7 +419,8 @@
 
     .benefit-item {
       background-color: #ffffff; /* White background for benefits */
-      padding: 15px;
+      padding: 20px;
+      margin-top: 1.5rem;
       border-radius: 10px;
       box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease-in-out;
@@ -393,7 +432,7 @@
 
     .benefit-item i {
       font-size: 2rem;
-      color: #007bff; /* Icon color matches primary color */
+      color: #08B74F; /* Icon color matches primary color */
       margin-bottom: 10px;
     }
 
@@ -427,20 +466,9 @@
 </section>
 
 
-<section class="partners-section slide-in-right">
-  <div class="container">
-    <h2 class="section-title">Our Partners</h2>
-    <div class="partners-grid">
-      <div class="partner-card">
-        <img src="https://avatars.githubusercontent.com/u/61445214?s=200&v=4" alt="Partner 1">
-        <h4>FOSS UNITED</h4>
-      </div>
-      <div class="partner-card">
-        <img src="https://www.mathworks.com/academia/tah-portal/symbiosis-institute-of-technology-pune-40493717/_jcr_content/schoolLogo.adapt.full.medium.png/1668594867923.png" alt="Partner 2">
-        <h4>SIT PUNE</h4>
-      </div>
-    </div>
-</section>
+
+
+
 
 <footer class="footer">
   <p>© 2025 FOSS Club</p>
