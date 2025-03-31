@@ -54,7 +54,7 @@ body {
   left: 0;
   width: 0%;
   height: 2px;
-  background: linear-gradient(90deg, #00cc66, #00aadd);
+  background: linear-gradient(90deg, #08B74F, #006c8d);
   transition: width 0.3s ease;
 }
 .nav-links li a:hover::after,
@@ -86,7 +86,7 @@ body {
 }
 .cta-button {
   display: inline-block;
-  background: linear-gradient(90deg, #00cc66, #00aadd);
+  background: linear-gradient(90deg, #08B74F, #007da3);
   color: #fff;
   padding: 0.8rem 1.5rem;
   text-decoration: none;
@@ -186,7 +186,7 @@ body {
   padding: 0.8rem;
 }
 .contact-form button {
-  background: linear-gradient(90deg, #00cc66, #00aadd);
+  background: linear-gradient(90deg, #08B74F, #00779b);
   color: #fff;
   padding: 0.8rem;
   border: none;
@@ -433,7 +433,7 @@ body {
 }
 
 .tech-tag {
-    background: linear-gradient(90deg, #00cc66, #00aadd);
+    background: linear-gradient(90deg, #08B74F, #0084ac);
     padding: 0.3rem 0.8rem;
     border-radius: 15px;
     font-size: 0.8rem;
@@ -482,7 +482,7 @@ body {
 }
 
 .demo-link {
-    background: linear-gradient(90deg, #00cc66, #00aadd);
+    background: linear-gradient(90deg, #08B74F, #006f91);
     color: #fff;
 }
 
@@ -598,7 +598,7 @@ body {
 /* Add these new styles */
 
 :root {
-    --primary-green: #00cc66;
+    --primary-green: #08B74F;
     --secondary-green: #00aa55;
     --accent-green: #00ff88;
     --dark-green: #005533;
@@ -2627,7 +2627,7 @@ footer p{
     left: 0;
     width: 0%;
     height: 2px;
-    background: linear-gradient(90deg, #00cc66, #00aadd);
+    background: linear-gradient(90deg, #08B74F, #006f91);
     transition: width 0.3s ease;
 }
 
@@ -2669,12 +2669,12 @@ footer p{
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: scale(1.05);
+  transform: scale(1);
   transition: transform 0.5s ease;
 }
 
 .about-image:hover img {
-  transform: scale(1);
+  transform: scale(1.05);
 }
 
 .about-content {
@@ -3927,7 +3927,7 @@ footer p{
 .subscribe-btn {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #00b324; /* FOSS Green */
+  background-color: #08B74F; /* FOSS Green */
   color: white;
   text-decoration: none;
   border-radius: 5px;
