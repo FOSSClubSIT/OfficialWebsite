@@ -1462,7 +1462,7 @@ body {
 
 /* Update team member cards to be smaller than heads */
 .team-card.member {
-    transform: scale(1);
+    transform: scale(0.9);
     min-width: 18rem;
     background: rgba(26, 26, 26, 0.6);
 }
@@ -2500,7 +2500,7 @@ button:hover, .register-btn:hover, .resources-btn:hover, .recording-btn:hover {
     gap: 20px;
     width: 100%;
     margin: 0 auto;
-    padding: 20px;
+    padding: 5px;
     box-sizing: border-box;
 }
 
