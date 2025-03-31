@@ -397,12 +397,15 @@ body {
     display: grid;
     gap: 2rem;
     margin-top: 2rem;
+    place-items: center;
 }
 
 .project-card {
     background: #1a1a1a;
     border-radius: 10px;
     overflow: hidden;
+    width: 70%;
+    margin: 4rem;
     transition: all 0.3s ease;
     cursor: pointer;
     position: relative;
@@ -1291,6 +1294,7 @@ body {
 .projects-container {
     padding: 2rem;
     max-width: 1400px;
+    place-items: center;
     margin: 0 auto;
 }
 
@@ -3878,11 +3882,22 @@ footer p{
   animation: fadeIn 0.8s ease-in-out;
 }
 
+
 .section-heading {
   font-size: 2.5rem;
   color: #fff;
   margin-bottom: 1rem;
   animation: fadeInDown 0.8s ease-in-out;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Allows responsiveness */
+  
+  padding-left: 1rem;
+  margin: 0 auto;
 }
 
 @keyframes fadeInDown {
@@ -3933,6 +3948,31 @@ footer p{
   border-radius: 5px;
   transition: background-color 0.3s;
 }
+
+/* Footer */
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.secondary-menu {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 10px 0;
+}
+.menu-link {
+  text-decoration: none;
+  color: #5b5b5b;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.menu-link:hover {
+  color: #555;
+}
+
+/* Footer */
 
 .subscribe-btn:hover {
   background-color: #0056b3;
