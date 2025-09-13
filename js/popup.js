@@ -5,9 +5,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Show popup after 3 seconds
   setTimeout(() => {
     popupOverlay.classList.add("active");
-  }, 30); //return to 3000 after testing for 3 sec delay
+  }, 3000); //update later to 3000 for 3 sec delay
 
-  // Close popup when clicking the close button
+  // Close popup when clicking the cross button
   closeBtn.addEventListener("click", () => {
     popupOverlay.classList.remove("active");
   });
@@ -19,4 +19,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-
