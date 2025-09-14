@@ -1,3 +1,7 @@
+/* === POPUP & ANIMATION STyles === */
+
+/* --- MAIN WEBSITE POPUP (Your Provided Code) --- */
+
 /* Popup Overlay */
 .popup-overlay {
   display: none; /* Hidden by default */
@@ -20,70 +24,38 @@
   opacity: 1;
 }
 
+/* The main popup container - Merged from your rules */
 .popup-box {
   position: relative;
-  background: url("..\\assets\\Images\\PPBG.jpg") no-repeat center center; /* image path */
-  background-size: cover;  /* makes it scale nicely */
-  color: white;            /* keep text visible */
-  padding: 25px 40px;
-  border-radius: 12px;
+  background: url("../assets/Images/PPBG.jpg") no-repeat center center;
+  background-size: cover;
+  color: white;
   text-align: center;
-  width: 400px;
-  max-width: 90%;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
-  animation: popup-explosion 0.6s ease forwards;
-}
-
-@keyframes glowing-border {
-  0%   { box-shadow: 0 0 6px rgba(43, 231, 131, 0.4), 0 0 12px rgba(43, 231, 131,0.3); }
-  50%  { box-shadow: 0 0 14px rgba(43, 231, 131,0.5), 0 0 28px rgba(43, 231, 131,0.3); }
-  100% { box-shadow: 0 0 6px rgba(43, 231, 131,0.4), 0 0 12px rgba(43, 231, 131,0.3); }
-}
-
-.popup-box {
+  border-radius: 12px;
   border: 2px solid rgba(43, 231, 131,0.6);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  width: 50%;
+  max-width: 500px;
+  min-width: 300px;
+  padding: 60px 40px 25px; /* Top padding adjusted for icon */
   animation: popup-explosion 0.6s ease forwards, glowing-border 2s infinite ease-in-out;
 }
 
-@keyframes glowing-text {
-  0%   { text-shadow: 0 0 6px rgba(43, 231, 131,0.6), 0 0 12px rgba(43, 231, 131,0.4); }
-  50%  { text-shadow: 0 0 14px rgba(43, 231, 131,0.8), 0 0 28px rgba(43, 231, 131,0.6); }
-  100% { text-shadow: 0 0 6px rgba(43, 231, 131,0.6), 0 0 12px rgba(43, 231, 131,0.4); }
-}
-
-.popup-box h2 {
-  color:rgba(9, 241, 117, 0.8);
-  animation: glowing-text 2s infinite ease-in-out;
-}
-
-/* Cross (close) button */
-.close-btn {
+.popup-icon {
   position: absolute;
-  top: 10px;
-  right: 12px;
-  background: none;
-  border: none;
-  font-size: 1.8em;
-  color: #fff;
-  cursor: pointer;
-  transition: color 0.3s ease;
-  outline: none;           /* remove the focus outline */
-  box-shadow: none;  
-}
-
-.close-btn:hover {
-  color: #403f3f;
-}
-
-.close-btn:focus {
-  outline: none;
-  box-shadow: none;
+  top: -40px;   /* Pushes image above the popup */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;  /* Adjust size */
+  height: auto;
 }
 
 /* Popup Title */
 .popup-box h2 {
   font-size: 1.5em;
   margin-bottom: 10px;
+  color:rgba(9, 241, 117, 0.8);
+  animation: glowing-text 2s infinite ease-in-out;
 }
 
 /* Popup Text */
@@ -103,20 +75,47 @@
 
 /* Popup Buttons */
 .popup-btn {
-  padding: 10px 20px;
-  background: #444;
+  background: #06363d;
   color: #fff;
+  padding: 10px 20px;
   text-decoration: none;
   font-size: 1em;
   border-radius: 8px;
-  transition: background 0.3s ease;
+  border: none;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .popup-btn:hover {
-  background: #666;
+  background: #6de5e7;
+  box-shadow: 0 0 8px rgba(0,247,255,0.6);
 }
 
-/* Explosion Animation */
+/* Cross (close) button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 1.8em;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  outline: none;
+  box-shadow: none;  
+}
+
+.close-btn:hover {
+  color: #403f3f;
+}
+
+.close-btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* --- POPUP ANIMATIONS (Your Provided Code) --- */
+
 @keyframes popup-explosion {
   0% {
     transform: scale(0.2);
@@ -132,54 +131,94 @@
   }
 }
 
-/* Both buttons match the title font color */
-.popup-btn {
-  background: #06363d; /* same as font */
-  color: #fff;
-  padding: 10px 20px;
-  text-decoration: none;
-  font-size: 1em;
+@keyframes glowing-border {
+  0%   { box-shadow: 0 0 6px rgba(43, 231, 131, 0.4), 0 0 12px rgba(43, 231, 131,0.3); }
+  50%  { box-shadow: 0 0 14px rgba(43, 231, 131,0.5), 0 0 28px rgba(43, 231, 131,0.3); }
+  100% { box-shadow: 0 0 6px rgba(43, 231, 131,0.4), 0 0 12px rgba(43, 231, 131,0.3); }
+}
+
+@keyframes glowing-text {
+  0%   { text-shadow: 0 0 6px rgba(43, 231, 131,0.6), 0 0 12px rgba(43, 231, 131,0.4); }
+  50%  { text-shadow: 0 0 14px rgba(43, 231, 131,0.8), 0 0 28px rgba(43, 231, 131,0.6); }
+  100% { text-shadow: 0 0 6px rgba(43, 231, 131,0.6), 0 0 12px rgba(43, 231, 131,0.4); }
+}
+
+/* --- ROCKET ANIMATION (Added Code) --- */
+
+#rocketWrapper {
+  position: absolute;
+  width: 144px;
+  height: 144px;
+  left: 0;
+  top: 0;
+  transform-origin: 50% 50%;
+  pointer-events: none;
+  z-index: 999; /* Below popup */
+}
+
+.rocket-inner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform-origin: 50% 50%;
+}
+
+.rocket-inner img.rocket {
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  user-select: none;
+}
+
+.flame {
+  position: absolute;
+  top: 50%; 
+  left: 5px;
+  
+  /* CHANGE THE ROTATION HERE */
+  transform: translateY(-50%) rotate(270deg);
+  
+  width: 35px;
+  height: auto;
+  pointer-events:none;
+  user-select:none;
+  z-index: -1;
+  filter: drop-shadow(0 6px 12px rgba(0,255,90,0.12));
+  animation: flameFlicker 0.12s steps(2) infinite;
+}
+
+@keyframes flameFlicker {
+  /* AND CHANGE THE ROTATION IN ALL 3 STEPS HERE */
+  0%   { transform: translateY(-50%) rotate(270deg) scaleY(1);    opacity:0.95; }
+  50%  { transform: translateY(-50%) rotate(270deg) scaleY(1.25); opacity:0.7;  }
+  100% { transform: translateY(-50%) rotate(270deg) scaleY(1);    opacity:0.95; }
+}
+
+.particle {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #00ff8a;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(0, 255, 140, 0.5), 0 0 25px rgba(0, 255, 140, 0.3);
+  pointer-events: none;
+}
+
+#triggerBtn {
+  position: fixed;
+  left: 16px;
+  bottom: 16px;
+  z-index: 1001; /* Above popup overlay */
+  background: #071;
+  color: #c7ffd0;
+  padding: 10px 12px;
   border-radius: 8px;
   border: none;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Hover effect */
-.popup-btn:hover {
-  background: #6de5e7; /* darker shade on hover */
-  box-shadow: 0 0 8px rgba(0,247,255,0.6); /* subtle glow */
-}
-
-/* Top-centered image */
-/* Top-centered PNG image */
-/* Top-centered PNG image */
-.popup-img {
-  display: block;
-  margin: -40px auto 15px;      /* negative top margin for badge effect, centered */
-  max-width: 120px;             /* adjust size as needed */
-  height: auto;                 /* maintain aspect ratio */
-  border-radius: 50%;           /* circular if square */
-  background: rgba(0,0,0,0.2); /* subtle background for transparency */
-  padding: 5px;                 /* space around image */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4); /* subtle shadow */
-}
-
-/* Popup box size */
-.popup-box {
-  width: 50%;         /* default width, adjust as needed */
-  max-width: 500px;   /* maximum width */
-  min-width: 300px;   /* minimum width */
-  padding: 25px 40px; /* spacing inside popup */
-  position: relative; /* needed so child can position absolutely */
-  padding-top: 60px;  /* give space so text doesn’t overlap image */
-}
-
-
-.popup-icon {
-  position: absolute;
-  top: -40px;   /* pushes image above the popup */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;  /* adjust size */
-  height: auto;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  font-family: system-ui, -apple-system, sans-serif;
+  font-weight: 600;
 }
