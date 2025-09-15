@@ -154,4 +154,18 @@
 
 setTimeout(launch, 50);
 
+const messages = [
+  "☢ Nuclear Threat Detected — Operation Zero Hour",
+  "⚠ Warhead Launch Confirmed — Operation Zero Hour",
+  "💥 Nuclear Detonation Protocol — Operation Zero Hour",
+  "🚨 Warhead Impact Imminent — Operation Zero Hour"
+];
+
+function randomMessage() {
+  const alertText = document.getElementById("alertText");
+  alertText.textContent = messages[Math.floor(Math.random() * messages.length)];
+}
+
+randomMessage();
+
 })();
