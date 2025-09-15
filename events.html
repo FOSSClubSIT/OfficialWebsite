@@ -18,15 +18,19 @@
         <span>FOSS</span>
       </a>
   
-      <button id="open-menu"  onclick="opensidebar()"><img src="assets/Images/menu_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" height="50px" width="50px" alt=""></button>
+      <button id="open-menu" onclick="opensidebar()">
+        <img src="assets/Images/menu_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" height="50px" width="50px" alt="">
+      </button>
   
       <ul class="nav-links">
-        <li><button id="close-menu" onclick="closesidebar()"><img src="assets/Images/close_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" height="50px" width="50px" alt=""></button></li>
-        <li><a href="./index.html" >Home</a></li>
+        <li><button id="close-menu" onclick="closesidebar()">
+          <img src="assets/Images/close_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" height="50px" width="50px" alt="">
+        </button></li>
+        <li><a href="./index.html">Home</a></li>
         <li><a href="./about.html">About</a></li>
         <li><a href="./projects.html">Projects</a></li>
-        <li><a href="./events.html" class="active" >Events</a></li>
-        <li><a href="./team.html" >Team</a></li>
+        <li><a href="./events.html" class="active">Events</a></li>
+        <li><a href="./team.html">Team</a></li>
         <li><a href="./contact.html">Contact</a></li>
       </ul>
     </nav>
@@ -43,23 +47,26 @@
 </section>
 
 <div class="events-container">
+  <!-- ==================== Upcoming Events ==================== -->
   <div class="events-section upcoming">
     <h2 class="section-title">Upcoming Events</h2>
+
+    <!-- SymbiTech Event -->
     <div class="event-card">
       <div class="event-date">
-        <span class="date">25</span>
-        <span class="month">MAR</span>
+        <span class="date">19</span>
+        <span class="month">SEPT</span>
       </div>
       <div class="event-content">
-        <div class="event-tag">Featured</div>
-        <h3>Open Source Workshop</h3>
-        <p>Learn how to contribute to open source projects and make your first PR.</p>
+        <div class="event-tag">Tech Fest</div>
+        <h3>SymbiTech</h3>
+        <p>Experience a blend of technology, innovation, and creativity at our annual tech festival.</p>
         <div class="event-meta">
-          <span><i class="fas fa-clock"></i> 2:00 PM - 5:00 PM</span>
-          <span><i class="fas fa-map-marker-alt"></i> Room 42, Tech Block</span>
+          <span><i class="fas fa-clock"></i> 9:00 AM - 4:30 PM</span>
+          <span><i class="fas fa-map-marker-alt"></i> Location to be dislosed!</span>
         </div>
         <div class="event-actions">
-          <a href="#" class="register-btn">Register Now</a>
+          <a href="Events\Symbitech2025.html" class="register-btn">Know More!</a>
           <button class="add-calendar-btn">
             <i class="fas fa-calendar-plus"></i>
             Add to Calendar
@@ -69,9 +76,32 @@
     </div>
   </div>
 
+  <!-- ==================== Completed Events ==================== -->
   <div class="events-section completed">
     <h2 class="section-title">Completed Events</h2>
 
+    <!-- Open Source Workshop (Completed Event) -->
+<div class="event-card completed">
+  <div class="event-date past">
+    <span class="date">25</span>
+    <span class="month">MAR</span>
+  </div>
+  <div class="event-content">
+    <h3>Open Source Workshop</h3>
+    <p>Learn how to contribute to open source projects and make your first PR.</p>
+    <div class="event-meta">
+      <span><i class="fas fa-clock"></i> 2:00 PM - 5:00 PM</span>
+      <span><i class="fas fa-map-marker-alt"></i> Room 42, Tech Block</span>
+    </div>
+    <div class="event-actions">
+      <a href="#" class="resources-btn">View Resources</a>
+      <a href="#" class="recording-btn">Watch Recording</a>
+    </div>
+  </div>
+</div>
+
+
+    <!-- Git & GitHub Basics -->
     <div class="event-card completed">
       <div class="event-date past">
         <span class="date">15</span>
@@ -91,7 +121,7 @@
       </div>
     </div>
 
-
+    <!-- FOSS Hack -->
     <div class="event-card completed">
       <div class="event-date past">
         <span class="date">27</span>
@@ -101,7 +131,7 @@
         <h3>FOSS Hack</h3>
         <p>Annual large scale open-source hackathon</p>
         <div class="event-meta">
-          <span><i class="fas fa-clock"></i> 36 Hours </span>
+          <span><i class="fas fa-clock"></i> 36 Hours</span>
           <span><i class="fas fa-map-marker-alt"></i> Offline/Online</span>
         </div>
         <div class="event-actions">
@@ -111,6 +141,7 @@
       </div>
     </div>
 
+    <!-- Workshop of Foss in AI -->
     <div class="event-card completed">
       <div class="event-date past">
         <span class="date">19</span>
@@ -120,7 +151,7 @@
         <h3>Workshop of Foss in AI</h3>
         <p>Using Reinforcement Learning in Games</p>
         <div class="event-meta">
-          <span><i class="fas fa-clock"></i> 1:40 PM - 3:00 PM </span>
+          <span><i class="fas fa-clock"></i> 1:40 PM - 3:00 PM</span>
           <span><i class="fas fa-map-marker-alt"></i> Offline</span>
         </div>
         <div class="event-actions">
@@ -129,15 +160,14 @@
         </div>
       </div>
     </div>
-
-
   </div>
 </div>
 
+<!-- ==================== Footer ==================== -->
 <footer class="footer">
   <div class="footer-content">
     <div class="logo-section" style="justify-content: flex-start; margin-left: 10px;">
-      <img src="assets\Images\logo_full.png" alt="FOSS Club Logo" class="club-logo" style="width: 160px; height: auto;">
+      <img src="assets/Images/logo_full.png" alt="FOSS Club Logo" class="club-logo" style="width: 160px; height: auto;">
     </div>
     <div class="secondary-menu" style="text-align: center;">
       <a href="./index.html" class="menu-link">Home</a>
@@ -157,6 +187,7 @@
   <div class="footer-links">
   </div>
 </footer>
+
 <script src="js/script.js"></script>
 <script src="./js/navigation.js"></script>
 </body>
