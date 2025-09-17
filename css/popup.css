@@ -222,3 +222,63 @@
   font-family: system-ui, -apple-system, sans-serif;
   font-weight: 600;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+.preheader {
+  width: 100%;
+  background: #001100;
+  border-bottom: 3px solid #39ff14;
+  color: #39ff14;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 16px;
+  padding: 12px 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  text-transform: uppercase;
+  box-shadow: 0 0 12px #39ff14 inset;
+  animation: flicker 4s infinite alternate;
+}
+
+#alertText {
+  text-shadow: 0 0 6px #39ff14, 0 0 18px #00ff88;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.cta-btn {
+  background: #001100;
+  border: 2px solid #39ff14;
+  color: #39ff14;
+  padding: 8px 16px;
+  font-size: 14px;
+  text-decoration: none;
+  border-radius: 6px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-shadow: 0 0 6px #39ff14, 0 0 18px #00ff88;
+  box-shadow: 0 0 15px #39ff14 inset, 0 0 10px #39ff14;
+  animation: buttonGlow 3s infinite alternate;
+  transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+  background: #39ff14;
+  color: #001100;
+  text-shadow: none;
+  box-shadow: 0 0 25px #39ff14, 0 0 40px #39ff14 inset;
+}
+
+@keyframes flicker {
+  0% { box-shadow: 0 0 8px #39ff14 inset; }
+  50% { box-shadow: 0 0 18px #39ff14 inset; }
+  100% { box-shadow: 0 0 12px #39ff14 inset; }
+}
+
+@keyframes buttonGlow {
+  0% { box-shadow: 0 0 8px #39ff14 inset, 0 0 12px #39ff14; }
+  100% { box-shadow: 0 0 20px #39ff14 inset, 0 0 30px #39ff14; }
+}
