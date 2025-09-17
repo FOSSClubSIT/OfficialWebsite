@@ -6,15 +6,15 @@
 <title>ZERO HOUR | FOSS Club</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Chakra+Petch:wght@700&family=Orbitron:wght@700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Chakra+Petch:wght[700]&family=Orbitron:wght@700&display=swap">
 <link rel="stylesheet" href="../css/styles.css">
 <link rel="stylesheet" href="../css/animations.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 <header class="header">
     <nav class="navbar">
-      <a href="./index.html" class="logo">
+      <a href="../index.html" class="logo">
         <img src="../assets/Images/logo.svg" alt="FOSS Logo">
         <span>FOSS</span>
       </a>
@@ -35,15 +35,25 @@
   
   <div id="overlay" onclick="closesidebar()" aria-hidden="true"></div>
 
-<!-- START: Event Page Content -->
 <style>
-    /* Event-specific styles */
+    /* ========================================
+    CORE THEME & ANIMATIONS
+    ========================================
+    */
     :root {
         --primary-green: #08B74F;
         --accent-green: #00ff88;
         --dark-green: #005533;
+        --glitch-red: #ff004c;
+        --dark-bg: #050505;
     }
     
+    body {
+        background-color: var(--dark-bg);
+        color: #e0e0e0;
+        font-family: 'Roboto Mono', monospace;
+    }
+
     /* Animated Particle Background */
     body::before {
         content: '';
@@ -54,10 +64,9 @@
         height: 100%;
         background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle fill="%231a1a1a" cx="25" cy="25" r="1"/><circle fill="%232a2a2a" cx="75" cy="75" r="1"/><circle fill="%23111" cx="50" cy="50" r="0.5"/></svg>');
         background-size: 50px 50px;
-        z-index: -2; /* Ensure it's behind everything */
+        z-index: -2;
         animation: move-particles 60s linear infinite;
     }
-
     @keyframes move-particles {
         from { background-position: 0 0; }
         to { background-position: 500px 1000px; }
@@ -76,147 +85,12 @@
         pointer-events: none;
         animation: scan 7.5s linear infinite;
     }
-    
     @keyframes scan {
         0% { background-position: 0 0; }
         100% { background-position: 0 100vh; }
     }
 
-    /* Themed Alert Banner Styles */
-    .themed-alert-banner {
-        padding: 2rem 1rem;
-        border-top: 5px solid var(--primary-green);
-        border-bottom: 5px solid var(--primary-green);
-        background-color: #111111;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-        animation: flicker 1.5s infinite alternate;
-    }
-
-    .themed-alert-banner::before {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background-image: repeating-linear-gradient(
-            45deg,
-            #1a1a1a,
-            #1a1a1a 15px,
-            transparent 15px,
-            transparent 30px
-        );
-        background-size: 42.4264px 42.4264px; /* Fix for seamless diagonal lines */
-        animation: scroll-stripes 2s linear infinite;
-        z-index: 0;
-    }
-
-    @keyframes flicker {
-        0% { opacity: 1; box-shadow: 0 0 100px rgba(8, 183, 79, 0.1) inset; }
-        50% { opacity: 0.95; box-shadow: 0 0 120px rgba(8, 183, 79, 0.15) inset;}
-        100% { opacity: 1; box-shadow: 0 0 100px rgba(8, 183, 79, 0.1) inset;}
-    }
-
-    @keyframes scroll-stripes {
-        from { background-position: 0 0; }
-        to { background-position: 42.4264px 0; }
-    }
-    
-    .alert-content {
-        background-color: rgba(0,0,0,0.75);
-        padding: 1.5rem;
-        border: 2px solid var(--primary-green);
-        display: inline-block;
-        box-shadow: 0 0 40px rgba(0, 255, 136, 0.4);
-        position: relative;
-        z-index: 1;
-    }
-
-    .alert-icon {
-        width: 50px;
-        height: 50px;
-        margin: 0 auto 1rem;
-        animation: spin 12s linear infinite;
-    }
-
-    @keyframes spin {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(360deg); }
-    }
-
-    .alert-title {
-        font-family: 'Chakra Petch', sans-serif;
-        font-size: clamp(2rem, 10vw, 3rem);
-        color: var(--accent-green);
-        text-transform: uppercase;
-        text-shadow: 0 0 10px var(--accent-green), 0 0 20px var(--accent-green);
-        animation: pulse 1s infinite alternate;
-        min-height: 1.2em;
-    }
-
-    @keyframes pulse {
-        from { text-shadow: 0 0 10px var(--accent-green), 0 0 20px var(--accent-green); color: var(--accent-green); }
-        to { text-shadow: 0 0 20px var(--primary-green), 0 0 30px var(--primary-green); color: #fff; }
-    }
-
-    .alert-subtitle {
-        font-family: 'Montserrat', sans-serif;
-        color: var(--primary-green);
-        margin-top: 0.5rem;
-        font-size: clamp(0.9rem, 3vw, 1.2rem);
-    }
-
-    .cta-button {
-      background: linear-gradient(90deg, var(--primary-green), var(--accent-green));
-      color: #000;
-      font-weight: bold;
-      border-radius: 9999px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .cta-button:hover {
-        transform: translateY(-5px) scale(1.05);
-        box-shadow: 0 15px 25px rgba(0, 255, 136, 0.25);
-    }
-
-    /* Bomb Timer Styles */
-    .countdown-section {
-        background-color: #000;
-        padding: 3rem 1rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .bomb-timer {
-        background: #000;
-        padding: 1rem 2rem;
-        border: 4px solid var(--dark-green);
-        border-radius: 10px;
-        display: inline-flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1.5rem;
-        box-shadow: 0 0 20px rgba(0, 255, 136, 0.3) inset;
-    }
-    .bomb-timer-group {
-        text-align: center;
-    }
-    .bomb-timer-digits {
-        font-family: 'Orbitron', sans-serif;
-        font-size: clamp(2.5rem, 12vw, 5rem);
-        color: var(--accent-green);
-        text-shadow: 0 0 15px var(--accent-green);
-        letter-spacing: .05em;
-    }
-    .bomb-timer-label {
-        font-family: 'Montserrat', sans-serif;
-        color: #ccc;
-        font-size: 1rem;
-        text-transform: uppercase;
-    }
-
-    /* Scroll Animation */
+    /* General Animation Utilities */
     .hidden-for-anim {
         opacity: 0;
         transform: translateY(30px);
@@ -227,157 +101,365 @@
         transform: translateY(0);
     }
     
-    /* IMPROVED Mission Section Styles */
-    .mission-section {
-        position: relative;
-        background-color: #0a0a0a;
-        padding: 4rem 1rem;
+    /* Glitch Heading Effect */
+    .glitch {
+      font-family: 'Chakra Petch', sans-serif;
+      font-size: clamp(2rem, 8vw, 3rem);
+      position: relative;
+      color: var(--accent-green);
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      text-shadow: 0 0 10px var(--accent-green);
     }
-    .mission-section::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-image: 
-            linear-gradient(var(--dark-green) 1px, transparent 1px),
-            linear-gradient(to right, var(--dark-green) 1px, transparent 1px);
-        background-size: 40px 40px;
-        opacity: 0.2;
-        animation: move-grid 20s linear infinite;
+    .glitch::before,
+    .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      left: 0;
+      width: 100%;
+      background: var(--dark-bg);
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+    }
+    .glitch::before {
+      animation: glitch-anim 2s infinite linear alternate-reverse;
+      left: -2px;
+      color: var(--glitch-red);
+      text-shadow: 1px 0 var(--glitch-red);
+    }
+    .glitch::after {
+      animation: glitch-anim 2.5s infinite linear alternate-reverse;
+      left: 2px;
+      color: cyan;
+      text-shadow: -1px 0 cyan;
+    }
+    @keyframes glitch-anim {
+      0% { clip: rect(42px, 9999px, 44px, 0); }
+      10% { clip: rect(12px, 9999px, 60px, 0); }
+      20% { clip: rect(32px, 9999px, 14px, 0); }
+      30% { clip: rect(52px, 9999px, 70px, 0); }
+      40% { clip: rect(10px, 9999px, 80px, 0); }
+      50% { clip: rect(62px, 9999px, 34px, 0); }
+      60% { clip: rect(12px, 9999px, 5px, 0); }
+      70% { clip: rect(40px, 9999px, 70px, 0); }
+      80% { clip: rect(82px, 9999px, 44px, 0); }
+      90% { clip: rect(22px, 9999px, 64px, 0); }
+      100% { clip: rect(50px, 9999px, 30px, 0); }
+    }
+
+    /* ========================================
+    PAGE SECTIONS
+    ========================================
+    */
+
+    /* --- Themed Alert Banner --- */
+    .themed-alert-banner {
+        padding: 3rem 1rem;
+        border-top: 5px solid var(--primary-green);
+        border-bottom: 5px solid var(--primary-green);
+        background-color: #111;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        animation: flicker-bg 1.5s infinite alternate;
+    }
+    .themed-alert-banner::before {
+        content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+        background-image: repeating-linear-gradient(45deg, #1a1a1a, #1a1a1a 15px, transparent 15px, transparent 30px);
+        background-size: 42.42px 42.42px;
+        animation: scroll-stripes 2s linear infinite;
         z-index: 0;
     }
+    @keyframes flicker-bg {
+        0% { opacity: 1; box-shadow: 0 0 100px rgba(8, 183, 79, 0.1) inset; }
+        50% { opacity: 0.95; box-shadow: 0 0 120px rgba(8, 183, 79, 0.15) inset;}
+        100% { opacity: 1; box-shadow: 0 0 100px rgba(8, 183, 79, 0.1) inset;}
+    }
+    @keyframes scroll-stripes { from { background-position: 0 0; } to { background-position: 42.42px 0; } }
     
-    @keyframes move-grid {
-       from { background-position: 0 0; }
-       to { background-position: 40px 40px; }
+    .alert-content {
+        background-color: rgba(0,0,0,0.75); padding: 1.5rem; border: 2px solid var(--primary-green);
+        display: inline-block; box-shadow: 0 0 40px rgba(0, 255, 136, 0.4); position: relative; z-index: 1;
     }
-    .mission-container {
-        max-width: 960px;
-        margin: 0 auto;
+    .alert-icon { width: 50px; height: 50px; margin: 0 auto 1rem; animation: spin 12s linear infinite; }
+    @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+    .alert-title {
+        font-family: 'Chakra Petch', sans-serif; font-size: clamp(2rem, 10vw, 3.5rem); color: var(--accent-green);
+        text-transform: uppercase; text-shadow: 0 0 10px var(--accent-green), 0 0 20px var(--accent-green);
+        animation: pulse-text 1s infinite alternate; min-height: 1.2em;
+    }
+    @keyframes pulse-text {
+        from { text-shadow: 0 0 10px var(--accent-green), 0 0 20px var(--accent-green); color: var(--accent-green); }
+        to { text-shadow: 0 0 20px var(--primary-green), 0 0 30px var(--primary-green); color: #fff; }
+    }
+    .alert-subtitle {
+        font-family: 'Montserrat', sans-serif; color: var(--primary-green); margin-top: 0.5rem; font-size: clamp(0.9rem, 3vw, 1.2rem);
+    }
+    
+    /* --- Countdown Timer --- */
+    .countdown-section {
+        background-color: #000; padding: 3rem 1rem; display: flex; justify-content: center; align-items: center;
+    }
+    .bomb-timer {
+        background: #000; padding: 1rem 2rem; border: 4px solid var(--dark-green); border-radius: 10px;
+        display: inline-flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem;
+        box-shadow: 0 0 20px rgba(0, 255, 136, 0.3) inset;
+    }
+    .bomb-timer-group { text-align: center; }
+    .bomb-timer-digits {
+        font-family: 'Orbitron', sans-serif; font-size: clamp(2.5rem, 12vw, 5rem); color: var(--accent-green);
+        text-shadow: 0 0 15px var(--accent-green); letter-spacing: .05em;
+    }
+    .bomb-timer-label {
+        font-family: 'Montserrat', sans-serif; color: #ccc; font-size: 1rem; text-transform: uppercase;
+    }
+    
+    /* --- Main Content Sections --- */
+    .event-section {
+        position: relative; padding: 5rem 1.5rem; text-align: center; max-width: 1200px; margin: 0 auto;
+    }
+    .themed-divider {
+        height: 2px;
+        width: 100px;
+        background-color: var(--dark-green);
+        margin: 4rem auto;
         position: relative;
-        z-index: 1;
     }
+    .themed-divider::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -4px;
+        width: 10px;
+        height: 10px;
+        background-color: var(--accent-green);
+        box-shadow: 0 0 10px var(--accent-green);
+        animation: scan-pulse 2s infinite;
+    }
+    @keyframes scan-pulse {
+        0%, 100% { transform: translateX(-50%) scale(1); opacity: 1; }
+        50% { transform: translateX(-50%) scale(1.5); opacity: 0.7; }
+    }
+
+    /* --- Mission Briefing Panel --- */
     .mission-panel {
         background: radial-gradient(circle, rgba(10, 25, 20, 0.5) 0%, rgba(0,0,0,0.8) 100%), #0a0a0a;
-        border: 2px solid var(--dark-green);
-        border-radius: 10px;
-        padding: 2rem;
-        position: relative;
+        border: 2px solid var(--dark-green); border-radius: 10px; padding: 2rem; text-align: left;
         box-shadow: 0 0 30px rgba(0, 255, 136, 0.1);
+    }
+    .mission-panel::after {
+        content: 'CONFIDENTIAL'; position: absolute; top: 2rem; right: 2rem; font-family: 'Roboto Mono', monospace;
+        color: rgba(0, 255, 136, 0.15); font-size: 1.5rem; font-weight: 700; transform: rotate(15deg);
+        border: 3px double rgba(0, 255, 136, 0.15); padding: 0.2rem 0.5rem; pointer-events: none; opacity: 0.5;
+    }
+    .mission-text { font-size: 1.1rem; line-height: 1.8; color: #ccc; margin-bottom: 2rem; }
+    .typewriter {
+      overflow: hidden; border-right: 2px solid var(--accent-green); white-space: nowrap;
+      animation: typing 3s steps(40, end), blink-caret .75s step-end infinite; margin: 1rem 0;
+    }
+    @keyframes typing { from { width: 0 } to { width: 100% } }
+    @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: var(--accent-green); } }
+    
+    .objectives-container {
+        background-color: rgba(0,0,0,0.4); border-left: 4px solid var(--primary-green);
+        padding: 1.5rem; border-radius: 5px; margin-top: 1rem;
+    }
+    .objectives-title {
+        font-size: 1.2rem; font-weight: 700; color: var(--primary-green);
+        margin-bottom: 1rem; text-transform: uppercase;
+    }
+    .objectives-list { list-style: none; padding-left: 0; }
+    .objectives-list li {
+        display: flex; align-items: flex-start; color: #ccc; margin-bottom: 0.75rem; transition: color 0.3s ease;
+    }
+    .objectives-list li:hover { color: var(--accent-green); }
+    .objectives-list li::before {
+        content: '>>'; color: var(--accent-green); margin-right: 0.75rem; font-weight: 700; line-height: 1.6;
+    }
+    
+    /* --- Squad Dossiers (Now as code blocks) --- */
+    .dossier-code-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        margin-top: 3rem;
+        justify-content: center;
+    }
+    .dossier-code-block {
+        background: #0a0a0a;
+        border: 2px solid var(--dark-green);
+        padding: 1.5rem;
+        text-align: left;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+        font-family: 'Roboto Mono', monospace;
+        font-size: 1.1rem;
+        color: var(--dark-green); /* Initially very subtle */
+        transition: all 0.3s ease;
+        box-shadow: 0 0 15px rgba(0, 255, 136, 0.05);
+        min-height: 120px; /* Ensure consistent height */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .dossier-code-block:hover {
+        border-color: var(--accent-green);
+        box-shadow: 0 0 25px rgba(0, 255, 136, 0.2);
+    }
+    .dossier-code-block .hidden-role {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 1.8rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: var(--accent-green);
+        text-shadow: 0 0 10px var(--accent-green);
+        opacity: 0;
+        animation: glitch-text-reveal 0.5s forwards;
+        pointer-events: none;
+    }
+    .dossier-code-block:hover .initial-code {
+        display: none;
+    }
+    .dossier-code-block:hover .hidden-role {
+        display: block;
+        animation: glitch-text-reveal 0.5s forwards;
+    }
+
+    @keyframes glitch-text-reveal {
+        0% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); text-shadow: 0 0 5px var(--glitch-red); }
+        25% { opacity: 0.5; transform: translate(-52%, -48%) scale(1.1); text-shadow: 2px 2px var(--accent-green), -2px -2px cyan; }
+        50% { opacity: 0.8; transform: translate(-49%, -51%) scale(0.95); text-shadow: 0 0 15px var(--accent-green); }
+        75% { opacity: 1; transform: translate(-51%, -49%) scale(1.02); text-shadow: -1px 1px var(--glitch-red), 1px -1px cyan; }
+        100% { opacity: 1; transform: translate(-50%, -50%) scale(1); text-shadow: 0 0 10px var(--accent-green); }
+    }
+
+    /* --- Terminal Output / Secret Message --- */
+    .terminal-output {
+        background: #000;
+        border: 2px solid var(--dark-green);
+        padding: 2rem;
+        margin: 4rem auto;
+        max-width: 800px;
+        box-shadow: 0 0 30px rgba(0, 255, 136, 0.2);
+        position: relative;
         text-align: left;
     }
-
-    .mission-panel::after {
-        content: 'TOP SECRET';
-        position: absolute;
-        top: 2rem;
-        right: 2rem;
-        font-family: 'Roboto Mono', monospace;
-        color: rgba(0, 255, 136, 0.15);
-        font-size: 1.5rem;
-        font-weight: 700;
-        transform: rotate(15deg);
-        border: 3px double rgba(0, 255, 136, 0.15);
-        padding: 0.2rem 0.5rem;
-        pointer-events: none;
-        opacity: 0.5;
-    }
-
-    .mission-title {
+    .terminal-output h3 {
         font-family: 'Chakra Petch', sans-serif;
-        font-size: 2.5rem;
         color: var(--accent-green);
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
         text-align: center;
-        margin-bottom: 2rem;
-        border-bottom: 2px solid var(--primary-green);
-        padding-bottom: 1rem;
-        display: inline-block;
+        text-shadow: 0 0 5px var(--accent-green);
     }
-
-    .mission-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        align-items: start;
-    }
-
-    @media (min-width: 768px) {
-        .mission-grid {
-            grid-template-columns: 2fr 1fr;
-        }
-    }
-
-    .mission-text {
-        font-size: 1.1rem;
-        line-height: 1.8;
-        color: #ccc;
-    }
-    .mission-text p:not(:first-child) {
-        margin-top: 1rem;
-    }
-
-    .objectives-container {
-        background-color: rgba(0,0,0,0.4);
-        border-left: 4px solid var(--primary-green);
+    .secret-message-box {
+        background-color: #111;
+        border: 1px dashed var(--primary-green);
         padding: 1.5rem;
-        border-radius: 5px;
-    }
-
-    .objectives-title {
-        font-family: 'Roboto Mono', monospace;
-        font-size: 1.2rem;
-        font-weight: 700;
-        color: var(--primary-green);
-        margin-bottom: 1rem;
-        text-transform: uppercase;
-    }
-
-    .objectives-list {
-        list-style: none;
-        padding-left: 0;
-    }
-
-    .objectives-list li {
-        display: flex;
-        align-items: flex-start;
-        color: #ccc;
-        margin-bottom: 0.75rem;
-        transition: color 0.3s ease;
-    }
-    .objectives-list li:hover {
-        color: var(--accent-green);
-    }
-
-    .objectives-list li::before {
-        content: '>>';
-        font-family: 'Roboto Mono', monospace;
-        color: var(--accent-green);
-        margin-right: 0.75rem;
-        font-weight: 700;
-        line-height: 1.6;
-    }
-
-    .mission-cta {
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
         text-align: center;
-        margin-top: 2.5rem;
+        transition: background-color 0.3s ease;
     }
+    .secret-message-box:hover {
+        background-color: #000;
+    }
+    .secret-message-box code {
+        display: block;
+        color: #777;
+        font-size: 1rem;
+        line-height: 1.6;
+        white-space: pre-wrap;
+        transition: opacity 0.3s ease;
+    }
+    .secret-message-box .revealed-message {
+        display: none;
+        color: var(--accent-green);
+        font-family: 'Chakra Petch', sans-serif;
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-shadow: 0 0 10px var(--accent-green);
+        animation: glitch-text-reveal 0.7s forwards;
+    }
+    .secret-message-box:hover code.initial-code-message {
+        display: none;
+    }
+    .secret-message-box:hover .revealed-message {
+        display: block;
+    }
+
+
+    /* --- CTA / Encourage Attendance Section --- */
+    .cta-button {
+      display: inline-block;
+      padding: 1rem 3rem;
+      margin-top: 2rem;
+      font-family: 'Chakra Petch', sans-serif;
+      font-size: 1.2rem;
+      background: linear-gradient(90deg, var(--primary-green), var(--accent-green));
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .cta-button:hover {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 15px 25px rgba(0, 255, 136, 0.25);
+    }
+    .event-info {
+        margin-top: 2.5rem;
+        font-size: 1.1rem;
+        color: #ddd;
+        line-height: 1.8;
+    }
+    .event-info span {
+        color: var(--accent-green);
+        font-weight: bold;
+        text-shadow: 0 0 5px rgba(0, 255, 136, 0.5);
+    }
+/* Add these new hover rules */
+.secret-message-box:hover .initial-code-message {
+  opacity: 0;
+}
+
+.secret-message-box:hover .revealed-message {
+  opacity: 1;
+}
+.secret-message-box code, 
+.secret-message-box .revealed-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%; /* Adjust width as needed */
+  transition: opacity 0.3s ease-in-out;
+}
 </style>
 
 <div class="scanline-overlay"></div>
 
-<!-- Themed Alert Banner -->
 <section class="themed-alert-banner">
     <div class="alert-content">
-        <img src="../assets/Images/NuclearIcon.png" alt="Biohazard Icon" class="alert-icon">
-        <h1 id="alert-title-anim" class="alert-title">ZERO HOUR</h1>
-        <p class="alert-subtitle">Threat Detected</p>
-        <p class="alert-subtitle">Initiating protocol-<b> "ZERO HOUR"<b></p>
+        <img src="../assets/Images/NuclearIcon.png" alt="Nuclear Threat Icon" class="alert-icon">
+        <h1 id="alert-title-anim" class="alert-title" data-text="ZERO HOUR">ZERO HOUR</h1>
+        <p class="alert-subtitle">Global Threat Detected. System Compromised.</p>
+        <p class="alert-subtitle">Initiating emergency protocol:<b> "ZERO HOUR"<b></p>
     </div>
 </section>
 
-<!-- Countdown Timer Section -->
 <section id="countdown-section" class="countdown-section">
     <div class="bomb-timer">
         <div class="bomb-timer-group">
@@ -399,72 +481,144 @@
     </div>
 </section>
 
+<main class="main-content">
 
-<!-- Event Details Section -->
-<section class="hidden-for-anim mission-section">
-    <div class="mission-container">
-        <div class="mission-panel">
-             <div style="text-align: center;">
-                <h2 class="mission-title">MISSION BRIEFING</h2>
-             </div>
-             <div class="mission-grid">
-                <div class="mission-text">
-                    <p>A catastrophic global event is imminent. You are a member of an elite response unit tasked with averting disaster.</p>
-                    <p>Your mission, should you choose to accept it, is to infiltrate the system, bypass security protocols, and neutralize the threat before the countdown reaches zero. The fate of the world rests in your hands.</p>
-                </div>
-                <div class="objectives-container">
-                    <h3 class="objectives-title">// CRITICAL OBJECTIVES</h3>
-                    <ul class="objectives-list">
-                        <li>Assemble your four-person squad.</li>
-                        <li>Designate tactical roles.</li>
-                        <li>Bypass complex security puzzles.</li>
-                        <li>Disarm the device & save humanity.</li>
-                    </ul>
-                </div>
-             </div>
-             <div class="mission-cta">
-                 <a href="#" class="cta-button inline-block py-3 px-8 text-base">
-                    Accept Mission
-                </a>
-             </div>
-        </div>
+<section class="event-section hidden-for-anim">
+  <div class="mission-panel">
+    <h2 class="glitch" data-text="EVENT OVERVIEW">EVENT OVERVIEW</h2>
+    <p class="mission-text">
+      <span class="typewriter">// PROTOCOL: ZERO HOUR INITIATED...</span><br>
+      An elite four-member squad must stop a simulated nuclear launch before the
+      ten-minute countdown hits zero. Combining cryptography, circuit puzzles, and
+      real-world tech, this event pushes every limit — logic, teamwork, and speed
+      under pressure.
+    </p>
+
+    <div class="objectives-container">
+      <h3 class="objectives-title">Game Format</h3>
+      <ul class="objectives-list">
+        <li>Team Size: 4 operatives</li>
+        <li>Time Limit: 10 minutes</li>
+        <li>Mode: Solo team mission</li>
+        <li>Environment: Live timer, alerts & red-zone suspense</li>
+      </ul>
     </div>
+  </div>
 </section>
+
+    <div class="themed-divider"></div>
+
+    <section class="event-section hidden-for-anim">
+        <h2 class="glitch" data-text="OPERATIVE ROSTER">OPERATIVE ROSTER</h2>
+        <p class="mission-text" style="max-width: 800px; margin: -1rem auto 3rem auto; text-align: center;">Authorized personnel only. Hover to reveal classified roles. Misuse will result in immediate termination.</p>
+        <div class="dossier-code-grid">
+            <div class="dossier-code-block">
+                <code class="initial-code">
+                    &lt;!-- Access Level 0 --&gt;<br>
+                    &nbsp;&nbsp;console.log("Loading...");<br>
+                    &nbsp;&nbsp;init_role(0x01);<br>
+                </code>
+                <div class="hidden-role" data-role="HACKER">HACKER</div>
+            </div>
+            <div class="dossier-code-block">
+                <code class="initial-code">
+                    &lt;!-- Access Level 0 --&gt;<br>
+                    &nbsp;&nbsp;console.log("Compiling...");<br>
+                    &nbsp;&nbsp;deploy_module(0x02);<br>
+                </code>
+                <div class="hidden-role" data-role="ENGINEER">ENGINEER</div>
+            </div>
+            <div class="dossier-code-block">
+                <code class="initial-code">
+                    &lt;!-- Access Level 0 --&gt;<br>
+                    &nbsp;&nbsp;console.log("Analyzing...");<br>
+                    &nbsp;&nbsp;parse_data(0x03);<br>
+                </code>
+                <div class="hidden-role" data-role="ANALYST">ANALYST</div>
+            </div>
+            <div class="dossier-code-block">
+                <code class="initial-code">
+                    &lt;!-- Access Level 0 --&gt;<br>
+                    &nbsp;&nbsp;console.log("Commanding...");<br>
+                    &nbsp;&nbsp;execute_directive(0x04);<br>
+                </code>
+                <div class="hidden-role" data-role="COMMANDER">COMMANDER</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="themed-divider"></div>
+
+    <section class="event-section hidden-for-anim">
+        <h2 class="glitch" data-text="TERMINAL OUTPUT">TERMINAL OUTPUT</h2>
+        <div class="terminal-output">
+            <h3>&gt; Accessing Encrypted Logs...</h3>
+            <div class="secret-message-box">
+                <code class="initial-code-message">
+                    // Log Entry #404<br>
+                    // Status: Corrupted<br>
+                    // Data: 7B226D657373616765223A22546865207472757468206973206F75742074686572652E204A6F696E20757320616E642066696E642069742E227D<br>
+                    // Encryption: AES-256 (Key Unknown)<br>
+                    &gt;&gt; HOVER TO DECRYPT &lt;&lt;
+                </code>
+                <p class="revealed-message">
+                    "The truth is out there. Join us and find it."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="themed-divider"></div>
+
+    <section class="event-section hidden-for-anim">
+        <h2 class="glitch" data-text="MISSION DIRECTIVE">MISSION DIRECTIVE</h2>
+        <p class="mission-text" style="max-width: 800px; margin: -1rem auto 1rem auto; text-align: center;">
+            This is not just a competition; it's a critical mission. Your skills are needed. Witness the unfolding crisis and be part of the solution. The future depends on you.
+        </p>
+        <div class="event-info">
+            <p><i class="fas fa-calendar-alt"></i> Date: <span>September 19-September 20,2025</span></p>
+            <p><i class="fas fa-map-marker-alt"></i> Venue: <span>Room no.401, SIT Pune</span></p>
+            <p><i class="fas fa-users-line"></i> Entry: <span>Free for all Tech enthusiasts!</span></p>
+        </div>
+        <a class="cta-button">Mark Your Calendars</a>
+        <p class="mission-text" style="margin-top: 2rem;">No registration needed, just bring your wits.</p>
+    </section>
+
+</main>
+
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
     // --- TEXT DECRYPTION SCRIPT ---
     const titleEl = document.getElementById('alert-title-anim');
-    const originalTitle = "NUCLEAR WARNING";
-    const chars = "!<>-_\\/[]{}—=+*^?#________";
-    let titleInterval;
+    if (titleEl) {
+        const originalTitle = titleEl.dataset.text || "ZERO HOUR";
+        const chars = "!<>-_\\/[]{}—=+*^?#_";
+        let titleInterval;
 
-    const decryptTitle = () => {
-        let iteration = 0;
-        clearInterval(titleInterval);
-        
-        titleInterval = setInterval(() => {
-            if(!titleEl) {
-                clearInterval(titleInterval);
-                return;
-            }
-            titleEl.innerText = originalTitle.split("")
-                .map((letter, index) => {
-                    if(index < iteration) {
-                        return originalTitle[index];
-                    }
-                    return chars[Math.floor(Math.random() * chars.length)];
-                })
-                .join("");
+        const decryptTitle = () => {
+            let iteration = 0;
+            clearInterval(titleInterval);
             
-            if(iteration >= originalTitle.length){ 
-                clearInterval(titleInterval);
-            }
-            
-            iteration += 1 / 3;
-        }, 25);
+            titleInterval = setInterval(() => {
+                titleEl.innerText = originalTitle.split("")
+                    .map((letter, index) => {
+                        if(index < iteration) {
+                            return originalTitle[index];
+                        }
+                        return letter === ' ' ? ' ' : chars[Math.floor(Math.random() * chars.length)];
+                    })
+                    .join("");
+                
+                if(iteration >= originalTitle.length){ 
+                    clearInterval(titleInterval);
+                }
+                
+                iteration += 1 / 3;
+            }, 30);
+        }
+        decryptTitle();
     }
-    decryptTitle();
     
     // --- BOMB TIMER SCRIPT ---
     const countDownDate = new Date("September 19, 2025 12:00:00").getTime();
@@ -482,7 +636,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (distance < 0) {
             clearInterval(interval);
             if(countdownSection) {
-                 countdownSection.innerHTML = '<div style="text-align: center; width: 100%; padding: 2rem 0;"><p style="font-size: 2rem; font-weight: bold; color: var(--accent-green);">IMPACT IMMINENT</p></div>';
+                 countdownSection.innerHTML = '<div style="text-align: center; width: 100%; padding: 2rem 0;"><p style="font-size: 2.5rem; font-family: \'Orbitron\', sans-serif; font-weight: bold; color: var(--glitch-red); text-shadow: 0 0 10px var(--glitch-red);">IMPACT</p></div>';
             }
             return;
         }
@@ -505,17 +659,15 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('fade-in-up');
+                observer.unobserve(entry.target); // Optional: Stop observing after animation
             }
         });
-    });
+    }, { threshold: 0.1 });
 
     const hiddenElements = document.querySelectorAll('.hidden-for-anim');
     hiddenElements.forEach((el) => observer.observe(el));
 });
 </script>
-<!-- END: Event Page Content -->
-
-
 <footer class="footer">
   <div class="footer-content">
     <div class="logo-section" style="justify-content: flex-start; margin-left: 10px;">
@@ -543,4 +695,3 @@ document.addEventListener('DOMContentLoaded', () => {
 <script src="./js/navigation.js"></script>
 </body>
 </html>
-
