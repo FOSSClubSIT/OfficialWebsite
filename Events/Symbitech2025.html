@@ -6,40 +6,14 @@
 <title>ZERO HOUR | FOSS Club</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Chakra+Petch:wght[700]&family=Orbitron:wght@700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Chakra+Petch:wght@700&family=Orbitron:wght@700&display=swap">
 <link rel="stylesheet" href="../css/styles.css">
 <link rel="stylesheet" href="../css/animations.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
-<header class="header">
-    <nav class="navbar">
-      <a href="../index.html" class="logo">
-        <img src="../assets/Images/logo.svg" alt="FOSS Logo">
-        <span>FOSS</span>
-      </a>
-  
-      <button id="open-menu" onclick="opensidebar()"><img src="assets/Images/menu_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" height="50px" width="50px" alt=""></button>
-  
-      <ul class="nav-links">
-        <li><button id="close-menu" onclick="closesidebar()"><img src="assets/Images/close_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" height="50px" width="50px" alt=""></button></li>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../about.html">About</a></li>
-        <li><a href="../projects.html">Projects</a></li>
-        <li><a href="../events.html">Events</a></li>
-        <li><a href="../team.html">Team</a></li>
-        <li><a href="../contact.html" class="active">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-  
-  <div id="overlay" onclick="closesidebar()" aria-hidden="true"></div>
-
 <style>
     /* ========================================
     CORE THEME & ANIMATIONS
-    ========================================
-    */
+    ======================================== */
     :root {
         --primary-green: #08B74F;
         --accent-green: #00ff88;
@@ -54,153 +28,54 @@
         font-family: 'Roboto Mono', monospace;
     }
 
-    /* Animated Particle Background */
     body::before {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
         background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle fill="%231a1a1a" cx="25" cy="25" r="1"/><circle fill="%232a2a2a" cx="75" cy="75" r="1"/><circle fill="%23111" cx="50" cy="50" r="0.5"/></svg>');
-        background-size: 50px 50px;
-        z-index: -2;
-        animation: move-particles 60s linear infinite;
+        background-size: 50px 50px; z-index: -2; animation: move-particles 60s linear infinite;
     }
-    @keyframes move-particles {
-        from { background-position: 0 0; }
-        to { background-position: 500px 1000px; }
-    }
+    @keyframes move-particles { from { background-position: 0 0; } to { background-position: 500px 1000px; } }
 
-    /* Scanline Overlay */
     .scanline-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
         background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(0, 255, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 255, 0, 0.04));
-        background-size: 100% 4px, 3px 100%;
-        z-index: 1000;
-        pointer-events: none;
-        animation: scan 7.5s linear infinite;
+        background-size: 100% 4px, 3px 100%; z-index: 1000; pointer-events: none; animation: scan 7.5s linear infinite;
     }
-    @keyframes scan {
-        0% { background-position: 0 0; }
-        100% { background-position: 0 100vh; }
-    }
-
-    /* General Animation Utilities */
-    .hidden-for-anim {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-    .fade-in-up {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    @keyframes scan { 0% { background-position: 0 0; } 100% { background-position: 0 100vh; } }
     
-    /* Glitch Heading Effect */
+    .hidden-for-anim { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+    .fade-in-up { opacity: 1; transform: translateY(0); }
+    
     .glitch {
-      font-family: 'Chakra Petch', sans-serif;
-      font-size: clamp(2rem, 8vw, 3rem);
-      position: relative;
-      color: var(--accent-green);
-      text-transform: uppercase;
-      margin-bottom: 2rem;
-      text-shadow: 0 0 10px var(--accent-green);
+      font-family: 'Chakra Petch', sans-serif; font-size: clamp(2rem, 8vw, 3rem); position: relative;
+      color: var(--accent-green); text-transform: uppercase; margin-bottom: 2rem; text-shadow: 0 0 10px var(--accent-green);
     }
-    .glitch::before,
-    .glitch::after {
-      content: attr(data-text);
-      position: absolute;
-      left: 0;
-      width: 100%;
-      background: var(--dark-bg);
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
+    .glitch::before, .glitch::after {
+      content: attr(data-text); position: absolute; left: 0; width: 100%;
+      background: var(--dark-bg); overflow: hidden; clip: rect(0, 0, 0, 0);
     }
-    .glitch::before {
-      animation: glitch-anim 2s infinite linear alternate-reverse;
-      left: -2px;
-      color: var(--glitch-red);
-      text-shadow: 1px 0 var(--glitch-red);
-    }
-    .glitch::after {
-      animation: glitch-anim 2.5s infinite linear alternate-reverse;
-      left: 2px;
-      color: cyan;
-      text-shadow: -1px 0 cyan;
-    }
+    .glitch::before { animation: glitch-anim 2s infinite linear alternate-reverse; left: -2px; color: var(--glitch-red); text-shadow: 1px 0 var(--glitch-red); }
+    .glitch::after { animation: glitch-anim 2.5s infinite linear alternate-reverse; left: 2px; color: cyan; text-shadow: -1px 0 cyan; }
     @keyframes glitch-anim {
-      0% { clip: rect(42px, 9999px, 44px, 0); }
-      10% { clip: rect(12px, 9999px, 60px, 0); }
-      20% { clip: rect(32px, 9999px, 14px, 0); }
-      30% { clip: rect(52px, 9999px, 70px, 0); }
-      40% { clip: rect(10px, 9999px, 80px, 0); }
-      50% { clip: rect(62px, 9999px, 34px, 0); }
-      60% { clip: rect(12px, 9999px, 5px, 0); }
-      70% { clip: rect(40px, 9999px, 70px, 0); }
-      80% { clip: rect(82px, 9999px, 44px, 0); }
-      90% { clip: rect(22px, 9999px, 64px, 0); }
-      100% { clip: rect(50px, 9999px, 30px, 0); }
+        0% { clip: rect(42px, 9999px, 44px, 0); } 10% { clip: rect(12px, 9999px, 60px, 0); } 20% { clip: rect(32px, 9999px, 14px, 0); }
+        30% { clip: rect(52px, 9999px, 70px, 0); } 40% { clip: rect(10px, 9999px, 80px, 0); } 50% { clip: rect(62px, 9999px, 34px, 0); }
+        60% { clip: rect(12px, 9999px, 5px, 0); } 70% { clip: rect(40px, 9999px, 70px, 0); } 80% { clip: rect(82px, 9999px, 44px, 0); }
+        90% { clip: rect(22px, 9999px, 64px, 0); } 100% { clip: rect(50px, 9999px, 30px, 0); }
     }
-
+    
     /* ========================================
-    PAGE SECTIONS
-    ========================================
-    */
-
-    /* --- Themed Alert Banner --- */
-    .themed-alert-banner {
-        padding: 3rem 1rem;
-        border-top: 5px solid var(--primary-green);
-        border-bottom: 5px solid var(--primary-green);
-        background-color: #111;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-        animation: flicker-bg 1.5s infinite alternate;
-    }
-    .themed-alert-banner::before {
-        content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-        background-image: repeating-linear-gradient(45deg, #1a1a1a, #1a1a1a 15px, transparent 15px, transparent 30px);
-        background-size: 42.42px 42.42px;
-        animation: scroll-stripes 2s linear infinite;
-        z-index: 0;
-    }
-    @keyframes flicker-bg {
-        0% { opacity: 1; box-shadow: 0 0 100px rgba(8, 183, 79, 0.1) inset; }
-        50% { opacity: 0.95; box-shadow: 0 0 120px rgba(8, 183, 79, 0.15) inset;}
-        100% { opacity: 1; box-shadow: 0 0 100px rgba(8, 183, 79, 0.1) inset;}
-    }
-    @keyframes scroll-stripes { from { background-position: 0 0; } to { background-position: 42.42px 0; } }
+     NEW HERO SECTION (TIMER + CTA)
+    ======================================== */
+.hero-section {
+    display: flex;
+    flex-direction: column; /* ✅ This stacks items vertically */
+    align-items: center;    /* This centers them horizontally */
+    gap: 2.5rem;            /* Increased gap slightly for vertical spacing */
+    padding: 2.5rem 1rem;
+    background-color: #0a0a0a;
+    border-bottom: 2px solid var(--dark-green);
+    text-align: center;
+}
     
-    .alert-content {
-        background-color: rgba(0,0,0,0.75); padding: 1.5rem; border: 2px solid var(--primary-green);
-        display: inline-block; box-shadow: 0 0 40px rgba(0, 255, 136, 0.4); position: relative; z-index: 1;
-    }
-    .alert-icon { width: 50px; height: 50px; margin: 0 auto 1rem; animation: spin 12s linear infinite; }
-    @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-
-    .alert-title {
-        font-family: 'Chakra Petch', sans-serif; font-size: clamp(2rem, 10vw, 3.5rem); color: var(--accent-green);
-        text-transform: uppercase; text-shadow: 0 0 10px var(--accent-green), 0 0 20px var(--accent-green);
-        animation: pulse-text 1s infinite alternate; min-height: 1.2em;
-    }
-    @keyframes pulse-text {
-        from { text-shadow: 0 0 10px var(--accent-green), 0 0 20px var(--accent-green); color: var(--accent-green); }
-        to { text-shadow: 0 0 20px var(--primary-green), 0 0 30px var(--primary-green); color: #fff; }
-    }
-    .alert-subtitle {
-        font-family: 'Montserrat', sans-serif; color: var(--primary-green); margin-top: 0.5rem; font-size: clamp(0.9rem, 3vw, 1.2rem);
-    }
-    
-    /* --- Countdown Timer --- */
-    .countdown-section {
-        background-color: #000; padding: 3rem 1rem; display: flex; justify-content: center; align-items: center;
-    }
     .bomb-timer {
         background: #000; padding: 1rem 2rem; border: 4px solid var(--dark-green); border-radius: 10px;
         display: inline-flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem;
@@ -208,42 +83,112 @@
     }
     .bomb-timer-group { text-align: center; }
     .bomb-timer-digits {
-        font-family: 'Orbitron', sans-serif; font-size: clamp(2.5rem, 12vw, 5rem); color: var(--accent-green);
+        font-family: 'Orbitron', sans-serif; font-size: clamp(2rem, 10vw, 4rem); color: var(--accent-green);
         text-shadow: 0 0 15px var(--accent-green); letter-spacing: .05em;
     }
     .bomb-timer-label {
-        font-family: 'Montserrat', sans-serif; color: #ccc; font-size: 1rem; text-transform: uppercase;
-    }
-    
-    /* --- Main Content Sections --- */
-    .event-section {
-        position: relative; padding: 5rem 1.5rem; text-align: center; max-width: 1200px; margin: 0 auto;
-    }
-    .themed-divider {
-        height: 2px;
-        width: 100px;
-        background-color: var(--dark-green);
-        margin: 4rem auto;
-        position: relative;
-    }
-    .themed-divider::before {
-        content: '';
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        top: -4px;
-        width: 10px;
-        height: 10px;
-        background-color: var(--accent-green);
-        box-shadow: 0 0 10px var(--accent-green);
-        animation: scan-pulse 2s infinite;
-    }
-    @keyframes scan-pulse {
-        0%, 100% { transform: translateX(-50%) scale(1); opacity: 1; }
-        50% { transform: translateX(-50%) scale(1.5); opacity: 0.7; }
+        font-family: 'Montserrat', sans-serif; color: #ccc; font-size: 0.9rem; text-transform: uppercase;
     }
 
-    /* --- Mission Briefing Panel --- */
+    .hero-cta-container {
+        max-width: 450px;
+    }
+    .hero-cta-container h2 {
+        font-family: 'Chakra Petch', sans-serif;
+        font-size: 1.5rem;
+        color: #ccc;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+    }
+    .hero-cta-container h2 span {
+        color: var(--accent-green);
+        text-shadow: 0 0 8px var(--accent-green);
+    }
+    .hero-cta-button {
+        display: inline-block;
+        background-color: var(--dark-green);
+        color: var(--accent-green);
+        font-family: 'Chakra Petch', sans-serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1.2rem 3rem;
+        border-radius: 8px;
+        border: 2px solid var(--primary-green);
+        box-shadow: 0 5px 0 0 #002e1a, 0 8px 15px rgba(0,0,0,0.5), inset 0 2px 5px rgba(0, 255, 136, 0.2);
+        position: relative;
+        transition: all 0.1s ease-in-out;
+    }
+    .hero-cta-button:hover {
+        transform: translateY(3px);
+        box-shadow: 0 2px 0 0 #002e1a, 0 4px 5px rgba(0,0,0,0.4), inset 0 1px 3px rgba(0, 255, 136, 0.2);
+    }
+    .hero-cta-button .btn-text::before,
+    .hero-cta-button .btn-text::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        color: var(--accent-green);
+        opacity: 0;
+    }
+    .hero-cta-button:hover .btn-text::before {
+        animation: glitch-btn 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
+        text-shadow: 2px 2px var(--glitch-red);
+    }
+    .hero-cta-button:hover .btn-text::after {
+        animation: glitch-btn 0.3s cubic-bezier(.25, .46, .45, .94) reverse both infinite;
+        text-shadow: -2px -2px cyan;
+    }
+@keyframes glitch-btn {
+  0% { transform: translate(0, -2px); opacity: 1; }
+  20% { transform: translate(-3px, -1px); } /* Was 3px (down), now -1px (up) */
+  40% { transform: translate(-3px, -5px); } /* Was -3px (up), now -5px (more up) */
+  60% { transform: translate(3px, -1px); }  /* Was 3px (down), now -1px (up) */
+  80% { transform: translate(3px, -5px); }  /* Was -3px (up), now -5px (more up) */
+  100% { transform: translate(0, -2px); opacity: 1; }
+}
+
+
+    /* ========================================
+    PAGE SECTIONS
+    ======================================== */
+    /* --- Themed Alert Banner --- */
+    .themed-alert-banner {
+        padding: 3rem 1rem; border-top: 5px solid var(--primary-green); border-bottom: 5px solid var(--primary-green);
+        background-color: #111; text-align: center; position: relative; overflow: hidden; animation: flicker-bg 1.5s infinite alternate;
+    }
+    .themed-alert-banner::before {
+        content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+        background-image: repeating-linear-gradient(45deg, #1a1a1a, #1a1a1a 15px, transparent 15px, transparent 30px);
+        background-size: 42.42px 42.42px; animation: scroll-stripes 2s linear infinite; z-index: 0;
+    }
+    @keyframes flicker-bg { 0% { opacity: 1; box-shadow: 0 0 100px rgba(8, 183, 79, 0.1) inset; } 50% { opacity: 0.95; box-shadow: 0 0 120px rgba(8, 183, 79, 0.15) inset;} 100% { opacity: 1; box-shadow: 0 0 100px rgba(8, 183, 79, 0.1) inset;} }
+    @keyframes scroll-stripes { from { background-position: 0 0; } to { background-position: 42.42px 0; } }
+    .alert-content {
+        background-color: rgba(0,0,0,0.75); padding: 1.5rem; border: 2px solid var(--primary-green);
+        display: inline-block; box-shadow: 0 0 40px rgba(0, 255, 136, 0.4); position: relative; z-index: 1;
+    }
+    .alert-icon { width: 50px; height: 50px; margin: 0 auto 1rem; animation: spin 12s linear infinite; }
+    @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    .alert-title {
+        font-family: 'Chakra Petch', sans-serif; font-size: clamp(2rem, 10vw, 3.5rem); color: var(--accent-green);
+        text-transform: uppercase; text-shadow: 0 0 10px var(--accent-green), 0 0 20px var(--accent-green);
+        animation: pulse-text 1s infinite alternate; min-height: 1.2em;
+    }
+    @keyframes pulse-text { from { text-shadow: 0 0 10px var(--accent-green), 0 0 20px var(--accent-green); color: var(--accent-green); } to { text-shadow: 0 0 20px var(--primary-green), 0 0 30px var(--primary-green); color: #fff; } }
+    .alert-subtitle { font-family: 'Montserrat', sans-serif; color: var(--primary-green); margin-top: 0.5rem; font-size: clamp(0.9rem, 3vw, 1.2rem); }
+    
+    /* --- Main Content Sections --- */
+    .event-section { position: relative; padding: 5rem 1.5rem; text-align: center; max-width: 1200px; margin: 0 auto; }
+    .themed-divider { height: 0.1px; width: 100px; background-color: var(--dark-green); margin: 0.1rem auto; position: relative; }
+    .themed-divider::before {
+        content: ''; position: absolute; left: 50%; transform: translateX(-50%); top: -4px;
+        width: 10px; height: 10px; background-color: var(--accent-green);
+        box-shadow: 0 0 10px var(--accent-green); animation: scan-pulse 2s infinite;
+    }
+    @keyframes scan-pulse { 0%, 100% { transform: translateX(-50%) scale(1); opacity: 1; } 50% { transform: translateX(-50%) scale(1.5); opacity: 0.7; } }
+
     .mission-panel {
         background: radial-gradient(circle, rgba(10, 25, 20, 0.5) 0%, rgba(0,0,0,0.8) 100%), #0a0a0a;
         border: 2px solid var(--dark-green); border-radius: 10px; padding: 2rem; text-align: left;
@@ -262,195 +207,85 @@
     @keyframes typing { from { width: 0 } to { width: 100% } }
     @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: var(--accent-green); } }
     
-    .objectives-container {
-        background-color: rgba(0,0,0,0.4); border-left: 4px solid var(--primary-green);
-        padding: 1.5rem; border-radius: 5px; margin-top: 1rem;
-    }
-    .objectives-title {
-        font-size: 1.2rem; font-weight: 700; color: var(--primary-green);
-        margin-bottom: 1rem; text-transform: uppercase;
-    }
+    .objectives-container { background-color: rgba(0,0,0,0.4); border-left: 4px solid var(--primary-green); padding: 1.5rem; border-radius: 5px; margin-top: 1rem; }
+    .objectives-title { font-size: 1.2rem; font-weight: 700; color: var(--primary-green); margin-bottom: 1rem; text-transform: uppercase; }
     .objectives-list { list-style: none; padding-left: 0; }
-    .objectives-list li {
-        display: flex; align-items: flex-start; color: #ccc; margin-bottom: 0.75rem; transition: color 0.3s ease;
-    }
+    .objectives-list li { display: flex; align-items: flex-start; color: #ccc; margin-bottom: 0.75rem; transition: color 0.3s ease; }
     .objectives-list li:hover { color: var(--accent-green); }
-    .objectives-list li::before {
-        content: '>>'; color: var(--accent-green); margin-right: 0.75rem; font-weight: 700; line-height: 1.6;
-    }
+    .objectives-list li::before { content: '>>'; color: var(--accent-green); margin-right: 0.75rem; font-weight: 700; line-height: 1.6; }
     
-    /* --- Squad Dossiers (Now as code blocks) --- */
-    .dossier-code-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1.5rem;
-        margin-top: 3rem;
-        justify-content: center;
-    }
+    .dossier-code-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 3rem; justify-content: center; }
     .dossier-code-block {
-        background: #0a0a0a;
-        border: 2px solid var(--dark-green);
-        padding: 1.5rem;
-        text-align: left;
-        overflow: hidden;
-        position: relative;
-        cursor: pointer;
-        font-family: 'Roboto Mono', monospace;
-        font-size: 1.1rem;
-        color: var(--dark-green); /* Initially very subtle */
-        transition: all 0.3s ease;
-        box-shadow: 0 0 15px rgba(0, 255, 136, 0.05);
-        min-height: 120px; /* Ensure consistent height */
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        background: #0a0a0a; border: 2px solid var(--dark-green); padding: 1.5rem; text-align: left;
+        overflow: hidden; position: relative; cursor: pointer; font-family: 'Roboto Mono', monospace; font-size: 1.1rem;
+        color: var(--dark-green); transition: all 0.3s ease; box-shadow: 0 0 15px rgba(0, 255, 136, 0.05);
+        min-height: 120px; display: flex; align-items: center; justify-content: center;
     }
-    .dossier-code-block:hover {
-        border-color: var(--accent-green);
-        box-shadow: 0 0 25px rgba(0, 255, 136, 0.2);
-    }
+    .dossier-code-block:hover { border-color: var(--accent-green); box-shadow: 0 0 25px rgba(0, 255, 136, 0.2); }
     .dossier-code-block .hidden-role {
-        display: none;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 1.8rem;
-        font-weight: bold;
-        text-transform: uppercase;
-        color: var(--accent-green);
-        text-shadow: 0 0 10px var(--accent-green);
-        opacity: 0;
-        animation: glitch-text-reveal 0.5s forwards;
-        pointer-events: none;
+        display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 1.8rem;
+        font-weight: bold; text-transform: uppercase; color: var(--accent-green); text-shadow: 0 0 10px var(--accent-green);
+        opacity: 0; animation: glitch-text-reveal 0.5s forwards; pointer-events: none;
     }
-    .dossier-code-block:hover .initial-code {
-        display: none;
-    }
-    .dossier-code-block:hover .hidden-role {
-        display: block;
-        animation: glitch-text-reveal 0.5s forwards;
-    }
-
+    .dossier-code-block:hover .initial-code { display: none; }
+    .dossier-code-block:hover .hidden-role { display: block; animation: glitch-text-reveal 0.5s forwards; }
     @keyframes glitch-text-reveal {
-        0% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); text-shadow: 0 0 5px var(--glitch-red); }
-        25% { opacity: 0.5; transform: translate(-52%, -48%) scale(1.1); text-shadow: 2px 2px var(--accent-green), -2px -2px cyan; }
-        50% { opacity: 0.8; transform: translate(-49%, -51%) scale(0.95); text-shadow: 0 0 15px var(--accent-green); }
-        75% { opacity: 1; transform: translate(-51%, -49%) scale(1.02); text-shadow: -1px 1px var(--glitch-red), 1px -1px cyan; }
+        0% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); text-shadow: 0 0 5px var(--glitch-red); } 25% { opacity: 0.5; transform: translate(-52%, -48%) scale(1.1); text-shadow: 2px 2px var(--accent-green), -2px -2px cyan; }
+        50% { opacity: 0.8; transform: translate(-49%, -51%) scale(0.95); text-shadow: 0 0 15px var(--accent-green); } 70% { opacity: 1; transform: translate(-51%, -49%) scale(1.02); text-shadow: -1px 1px var(--glitch-red), 1px -1px cyan; }
         100% { opacity: 1; transform: translate(-50%, -50%) scale(1); text-shadow: 0 0 10px var(--accent-green); }
     }
 
-    /* --- Terminal Output / Secret Message --- */
-    .terminal-output {
-        background: #000;
-        border: 2px solid var(--dark-green);
-        padding: 2rem;
-        margin: 4rem auto;
-        max-width: 800px;
-        box-shadow: 0 0 30px rgba(0, 255, 136, 0.2);
-        position: relative;
-        text-align: left;
-    }
-    .terminal-output h3 {
-        font-family: 'Chakra Petch', sans-serif;
-        color: var(--accent-green);
-        font-size: 1.5rem;
-        margin-bottom: 1.5rem;
-        text-align: center;
-        text-shadow: 0 0 5px var(--accent-green);
-    }
+    .terminal-output { background: #000; border: 2px solid var(--dark-green); padding: 2rem; margin: 4rem auto; max-width: 800px; box-shadow: 0 0 30px rgba(0, 255, 136, 0.2); position: relative; text-align: left; }
+    .terminal-output h3 { font-family: 'Chakra Petch', sans-serif; color: var(--accent-green); font-size: 1.5rem; margin-bottom: 1.5rem; text-align: center; text-shadow: 0 0 5px var(--accent-green); }
     .secret-message-box {
-        background-color: #111;
-        border: 1px dashed var(--primary-green);
-        padding: 1.5rem;
-        overflow: hidden;
-        position: relative;
-        cursor: pointer;
-        text-align: center;
-        transition: background-color 0.3s ease;
+        background-color: #111; border: 1px dashed var(--primary-green); padding: 1.5rem; min-height: 180px;
+        position: relative; cursor: pointer; text-align: center; display: flex;
+        align-items: center; justify-content: center; transition: background-color 0.3s ease;
     }
-    .secret-message-box:hover {
-        background-color: #000;
-    }
-    .secret-message-box code {
-        display: block;
-        color: #777;
-        font-size: 1rem;
-        line-height: 1.6;
-        white-space: pre-wrap;
-        transition: opacity 0.3s ease;
-    }
-    .secret-message-box .revealed-message {
-        display: none;
-        color: var(--accent-green);
-        font-family: 'Chakra Petch', sans-serif;
-        font-size: 1.2rem;
-        font-weight: bold;
-        text-shadow: 0 0 10px var(--accent-green);
-        animation: glitch-text-reveal 0.7s forwards;
-    }
-    .secret-message-box:hover code.initial-code-message {
-        display: none;
-    }
-    .secret-message-box:hover .revealed-message {
-        display: block;
-    }
+    .secret-message-box:hover { background-color: #000; }
+    .secret-message-box code.initial-code-message, .secret-message-box .revealed-message { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; transition: opacity 0.4s ease-in-out; }
+    .secret-message-box .revealed-message { opacity: 0; }
+    .secret-message-box:hover .initial-code-message { opacity: 0; }
+    .secret-message-box:hover .revealed-message { opacity: 1; }
+    .secret-message-box code { display: block; color: #777; font-size: 1rem; line-height: 1.6; white-space: pre-wrap; }
+    .secret-message-box .revealed-message { display: block; color: var(--accent-green); font-family: 'Chakra Petch', sans-serif; font-size: 1.2rem; font-weight: bold; text-shadow: 0 0 10px var(--accent-green); }
 
-
-    /* --- CTA / Encourage Attendance Section --- */
     .cta-button {
-      display: inline-block;
-      padding: 1rem 3rem;
-      margin-top: 2rem;
-      font-family: 'Chakra Petch', sans-serif;
-      font-size: 1.2rem;
-      background: linear-gradient(90deg, var(--primary-green), var(--accent-green));
-      color: #000;
-      font-weight: bold;
-      border: none;
-      border-radius: 9999px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-      text-decoration: none;
+      display: inline-block; padding: 1rem 3rem; margin-top: 2rem; font-family: 'Chakra Petch', sans-serif; font-size: 1.2rem;
+      background: linear-gradient(90deg, var(--primary-green), var(--accent-green)); color: #000; font-weight: bold;
+      border: none; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.05em;
+      transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; text-decoration: none;
     }
-    .cta-button:hover {
-        transform: translateY(-5px) scale(1.05);
-        box-shadow: 0 15px 25px rgba(0, 255, 136, 0.25);
-    }
-    .event-info {
-        margin-top: 2.5rem;
-        font-size: 1.1rem;
-        color: #ddd;
-        line-height: 1.8;
-    }
-    .event-info span {
-        color: var(--accent-green);
-        font-weight: bold;
-        text-shadow: 0 0 5px rgba(0, 255, 136, 0.5);
-    }
-/* Add these new hover rules */
-.secret-message-box:hover .initial-code-message {
-  opacity: 0;
-}
-
-.secret-message-box:hover .revealed-message {
-  opacity: 1;
-}
-.secret-message-box code, 
-.secret-message-box .revealed-message {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90%; /* Adjust width as needed */
-  transition: opacity 0.3s ease-in-out;
-}
+    .cta-button:hover { transform: translateY(-5px) scale(1.05); box-shadow: 0 15px 25px rgba(0, 255, 136, 0.25); }
+    .event-info { margin-top: 2.5rem; font-size: 1.1rem; color: #ddd; line-height: 1.8; }
+    .event-info span { color: var(--accent-green); font-weight: bold; text-shadow: 0 0 5px rgba(0, 255, 136, 0.5); }
 </style>
+</head>
+<body>
 
 <div class="scanline-overlay"></div>
 
+<header class="header">
+    <nav class="navbar">
+      <a href="./index.html" class="logo">
+        <img src="../assets/Images/logo.svg" alt="FOSS Logo">
+        <span>FOSS</span>
+      </a>
+  
+      <button id="open-menu" onclick="opensidebar()"><img src="../assets/Images/menu_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" height="50px" width="50px" alt=""></button>
+  
+      <ul class="nav-links">
+        <li><button id="close-menu" onclick="closesidebar()"><img src="../assets/Images/close_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" height="50px" width="50px" alt=""></button></li>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../projects.html">Projects</a></li>
+        <li><a href="../events.html">Events</a></li>
+        <li><a href="../team.html">Team</a></li>
+        <li><a href="../contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+</header>
+<div id="overlay" onclick="closesidebar()" aria-hidden="true"></div>
 <section class="themed-alert-banner">
     <div class="alert-content">
         <img src="../assets/Images/NuclearIcon.png" alt="Nuclear Threat Icon" class="alert-icon">
@@ -458,9 +293,17 @@
         <p class="alert-subtitle">Global Threat Detected. System Compromised.</p>
         <p class="alert-subtitle">Initiating emergency protocol:<b> "ZERO HOUR"<b></p>
     </div>
-</section>
+        <h2 style="position: relative; z-index: 3; padding: 20px;">Mission Critical: <span>SymbiTech 2025</span> Awaits</h2>
 
-<section id="countdown-section" class="countdown-section">
+    <a href="https://docs.google.com/forms/d/1K2ZMLyjg-50kTiA2qiY1Kjn5EEfKmRxjbyVgjcryUbA/viewform?ts=68c45724&edit_requested=true" class="hero-cta-button" target="_blank" rel="noopener noreferrer">
+        <span class="btn-text" data-text="Register Now!">
+            <i class="fas fa-file-signature"></i> ACCEPT MISSION!
+        </span>
+    </a>
+</section>
+<section class="hero-section">
+
+
     <div class="bomb-timer">
         <div class="bomb-timer-group">
             <div id="days" class="bomb-timer-digits">000</div>
@@ -493,7 +336,6 @@
       real-world tech, this event pushes every limit — logic, teamwork, and speed
       under pressure.
     </p>
-
     <div class="objectives-container">
       <h3 class="objectives-title">Game Format</h3>
       <ul class="objectives-list">
@@ -513,35 +355,19 @@
         <p class="mission-text" style="max-width: 800px; margin: -1rem auto 3rem auto; text-align: center;">Authorized personnel only. Hover to reveal classified roles. Misuse will result in immediate termination.</p>
         <div class="dossier-code-grid">
             <div class="dossier-code-block">
-                <code class="initial-code">
-                    &lt;!-- Access Level 0 --&gt;<br>
-                    &nbsp;&nbsp;console.log("Loading...");<br>
-                    &nbsp;&nbsp;init_role(0x01);<br>
-                </code>
+                <code class="initial-code">&lt;!-- Access Level 0 --&gt;<br>&nbsp;&nbsp;console.log("Loading...");<br>&nbsp;&nbsp;init_role(0x01);</code>
                 <div class="hidden-role" data-role="HACKER">HACKER</div>
             </div>
             <div class="dossier-code-block">
-                <code class="initial-code">
-                    &lt;!-- Access Level 0 --&gt;<br>
-                    &nbsp;&nbsp;console.log("Compiling...");<br>
-                    &nbsp;&nbsp;deploy_module(0x02);<br>
-                </code>
+                <code class="initial-code">&lt;!-- Access Level 0 --&gt;<br>&nbsp;&nbsp;console.log("Compiling...");<br>&nbsp;&nbsp;deploy_module(0x02);</code>
                 <div class="hidden-role" data-role="ENGINEER">ENGINEER</div>
             </div>
             <div class="dossier-code-block">
-                <code class="initial-code">
-                    &lt;!-- Access Level 0 --&gt;<br>
-                    &nbsp;&nbsp;console.log("Analyzing...");<br>
-                    &nbsp;&nbsp;parse_data(0x03);<br>
-                </code>
+                <code class="initial-code">&lt;!-- Access Level 0 --&gt;<br>&nbsp;&nbsp;console.log("Analyzing...");<br>&nbsp;&nbsp;parse_data(0x03);</code>
                 <div class="hidden-role" data-role="ANALYST">ANALYST</div>
             </div>
             <div class="dossier-code-block">
-                <code class="initial-code">
-                    &lt;!-- Access Level 0 --&gt;<br>
-                    &nbsp;&nbsp;console.log("Commanding...");<br>
-                    &nbsp;&nbsp;execute_directive(0x04);<br>
-                </code>
+                <code class="initial-code">&lt;!-- Access Level 0 --&gt;<br>&nbsp;&nbsp;console.log("Commanding...");<br>&nbsp;&nbsp;execute_directive(0x04);</code>
                 <div class="hidden-role" data-role="COMMANDER">COMMANDER</div>
             </div>
         </div>
@@ -554,16 +380,8 @@
         <div class="terminal-output">
             <h3>&gt; Accessing Encrypted Logs...</h3>
             <div class="secret-message-box">
-                <code class="initial-code-message">
-                    // Log Entry #404<br>
-                    // Status: Corrupted<br>
-                    // Data: 7B226D657373616765223A22546865207472757468206973206F75742074686572652E204A6F696E20757320616E642066696E642069742E227D<br>
-                    // Encryption: AES-256 (Key Unknown)<br>
-                    &gt;&gt; HOVER TO DECRYPT &lt;&lt;
-                </code>
-                <p class="revealed-message">
-                    "The truth is out there. Join us and find it."
-                </p>
+                <code class="initial-code-message">// Log Entry #404<br>// Status: Corrupted<br>// Data: 7B22...652E227D<br>// Encryption: AES-256 (Key Unknown)<br>&gt;&gt; HOVER TO DECRYPT &lt;&lt;</code>
+                <p class="revealed-message">"The truth is out there. Join us and find it."</p>
             </div>
         </div>
     </section>
@@ -572,102 +390,18 @@
 
     <section class="event-section hidden-for-anim">
         <h2 class="glitch" data-text="MISSION DIRECTIVE">MISSION DIRECTIVE</h2>
-        <p class="mission-text" style="max-width: 800px; margin: -1rem auto 1rem auto; text-align: center;">
-            This is not just a competition; it's a critical mission. Your skills are needed. Witness the unfolding crisis and be part of the solution. The future depends on you.
-        </p>
+        <p class="mission-text" style="max-width: 800px; margin: -1rem auto 1rem auto; text-align: center;">This is not just a competition; it's a critical mission. Your skills are needed. Witness the unfolding crisis and be part of the solution. The future depends on you.</p>
         <div class="event-info">
-            <p><i class="fas fa-calendar-alt"></i> Date: <span>September 19-September 20,2025</span></p>
+            <p><i class="fas fa-calendar-alt"></i> Date: <span>September 19-September 20, 2025</span></p>
             <p><i class="fas fa-map-marker-alt"></i> Venue: <span>Room no.401, SIT Pune</span></p>
             <p><i class="fas fa-users-line"></i> Entry: <span>Free for all Tech enthusiasts!</span></p>
         </div>
-        <a class="cta-button">Mark Your Calendars</a>
+        <a href="https://docs.google.com/forms/d/1K2ZMLyjg-50kTiA2qiY1Kjn5EEfKmRxjbyVgjcryUbA/viewform?ts=68c45724&edit_requested=true" class="cta-button">Accept The Mission</a>
         <p class="mission-text" style="margin-top: 2rem;">No registration needed, just bring your wits.</p>
     </section>
-
 </main>
 
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    // --- TEXT DECRYPTION SCRIPT ---
-    const titleEl = document.getElementById('alert-title-anim');
-    if (titleEl) {
-        const originalTitle = titleEl.dataset.text || "ZERO HOUR";
-        const chars = "!<>-_\\/[]{}—=+*^?#_";
-        let titleInterval;
-
-        const decryptTitle = () => {
-            let iteration = 0;
-            clearInterval(titleInterval);
-            
-            titleInterval = setInterval(() => {
-                titleEl.innerText = originalTitle.split("")
-                    .map((letter, index) => {
-                        if(index < iteration) {
-                            return originalTitle[index];
-                        }
-                        return letter === ' ' ? ' ' : chars[Math.floor(Math.random() * chars.length)];
-                    })
-                    .join("");
-                
-                if(iteration >= originalTitle.length){ 
-                    clearInterval(titleInterval);
-                }
-                
-                iteration += 1 / 3;
-            }, 30);
-        }
-        decryptTitle();
-    }
-    
-    // --- BOMB TIMER SCRIPT ---
-    const countDownDate = new Date("September 19, 2025 12:00:00").getTime();
-    
-    const daysEl = document.getElementById('days');
-    const hoursEl = document.getElementById('hours');
-    const minutesEl = document.getElementById('minutes');
-    const secondsEl = document.getElementById('seconds');
-    const countdownSection = document.getElementById('countdown-section');
-
-    const interval = setInterval(() => {
-        const now = new Date().getTime();
-        const distance = countDownDate - now;
-
-        if (distance < 0) {
-            clearInterval(interval);
-            if(countdownSection) {
-                 countdownSection.innerHTML = '<div style="text-align: center; width: 100%; padding: 2rem 0;"><p style="font-size: 2.5rem; font-family: \'Orbitron\', sans-serif; font-weight: bold; color: var(--glitch-red); text-shadow: 0 0 10px var(--glitch-red);">IMPACT</p></div>';
-            }
-            return;
-        }
-
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        if(daysEl) daysEl.innerText = String(days).padStart(3, '0');
-        if(hoursEl) hoursEl.innerText = String(hours).padStart(2, '0');
-        if(minutesEl) minutesEl.innerText = String(minutes).padStart(2, '0');
-        if(secondsEl) secondsEl.innerText = String(seconds).padStart(2, '0');
-
-    }, 1000);
-
-
-    // --- SCROLL ANIMATION SCRIPT ---
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in-up');
-                observer.unobserve(entry.target); // Optional: Stop observing after animation
-            }
-        });
-    }, { threshold: 0.1 });
-
-    const hiddenElements = document.querySelectorAll('.hidden-for-anim');
-    hiddenElements.forEach((el) => observer.observe(el));
-});
-</script>
 <footer class="footer">
   <div class="footer-content">
     <div class="logo-section" style="justify-content: flex-start; margin-left: 10px;">
@@ -691,7 +425,71 @@ document.addEventListener('DOMContentLoaded', () => {
   <div class="footer-links">
   </div>
 </footer>
-<script src="./js/script.js"></script>
-<script src="./js/navigation.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // --- TEXT DECRYPTION SCRIPT ---
+    const titleEl = document.getElementById('alert-title-anim');
+    if (titleEl) {
+        const originalTitle = titleEl.dataset.text || "ZERO HOUR";
+        const chars = "!<>-\\/[]{}—=+*^?#";
+        let titleInterval;
+        const decryptTitle = () => {
+            let iteration = 0;
+            clearInterval(titleInterval);
+            titleInterval = setInterval(() => {
+                titleEl.innerText = originalTitle.split("").map((letter, index) => {
+                    if(index < iteration) return originalTitle[index];
+                    return letter === ' ' ? ' ' : chars[Math.floor(Math.random() * chars.length)];
+                }).join("");
+                if(iteration >= originalTitle.length) clearInterval(titleInterval);
+                iteration += 1 / 3;
+            }, 30);
+        }
+        decryptTitle();
+    }
+    
+    // --- BOMB TIMER SCRIPT ---
+    const countDownDate = new Date("September 19, 2025 12:00:00").getTime();
+    const daysEl = document.getElementById('days');
+    const hoursEl = document.getElementById('hours');
+    const minutesEl = document.getElementById('minutes');
+    const secondsEl = document.getElementById('seconds');
+    const interval = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = countDownDate - now;
+        if (distance < 0) {
+            clearInterval(interval);
+            const timerContainer = document.querySelector('.bomb-timer');
+            if(timerContainer) {
+                 timerContainer.innerHTML = '<div style="text-align: center; width: 100%; padding: 1rem 0;"><p style="font-size: 2.5rem; font-family: \'Orbitron\', sans-serif; font-weight: bold; color: var(--glitch-red); text-shadow: 0 0 10px var(--glitch-red);">IMPACT</p></div>';
+            }
+            return;
+        }
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        if(daysEl) daysEl.innerText = String(days).padStart(3, '0');
+        if(hoursEl) hoursEl.innerText = String(hours).padStart(2, '0');
+        if(minutesEl) minutesEl.innerText = String(minutes).padStart(2, '0');
+        if(secondsEl) secondsEl.innerText = String(seconds).padStart(2, '0');
+    }, 1000);
+
+    // --- SCROLL ANIMATION SCRIPT ---
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in-up');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+    const hiddenElements = document.querySelectorAll('.hidden-for-anim');
+    hiddenElements.forEach((el) => observer.observe(el));
+});
+</script>
+<script src="../js/script.js"></script>
+<script src="../js/navigation.js"></script>
 </body>
 </html>
